@@ -5,148 +5,77 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Semana 05 · Actividad 1</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #050b19;
-      color: #edf7ff;
-      font-family: "Segoe UI", system-ui, Arial, sans-serif;
-      padding: 40px 20px;
-      min-height: 100vh;
-    }
-    .card {
-      max-width: 820px;
-      margin: 0 auto;
-      background: linear-gradient(145deg, #0a1730, #071226);
-      border: 1px solid #1edcff44;
-      border-radius: 28px;
-      padding: 40px;
-      box-shadow: 0 0 60px #00d9ff15;
-    }
-    .tag {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 99px;
-      background: #325eea;
-      color: white;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      margin-bottom: 18px;
-    }
-    h1 {
-      font-size: 32px;
-      line-height: 1.25;
-      margin-bottom: 8px;
-      color: #ffffff;
-    }
-    .subtitle {
-      color: #7eb8ff;
-      font-size: 15px;
-      margin-bottom: 6px;
-    }
-    .desc {
-      color: #a8c0d8;
-      line-height: 1.7;
-      margin-bottom: 32px;
-      font-size: 15px;
-    }
-    .box {
-      background: #071126;
-      border: 1px solid #8a5cff44;
-      border-radius: 20px;
-      padding: 28px;
-    }
-    .box h2 {
-      color: #45e5ff;
-      font-size: 18px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .file-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .file-btn {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      background: #0c1a33;
-      border: 1px solid #1e3a5f;
-      border-radius: 14px;
-      text-decoration: none;
-      color: #edf7ff;
-      transition: all 0.2s ease;
-    }
-    .file-btn:hover {
-      background: #122a4a;
-      border-color: #45e5ff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px #00d9ff20;
-    }
-    .file-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-    .pdf-icon { background: #ff3b4a22; }
-    .sql-icon { background: #45e5ff22; }
-    .file-info {
-      flex: 1;
-    }
-    .file-name {
-      font-weight: 600;
-      font-size: 15px;
-      margin-bottom: 3px;
-    }
-    .file-desc {
-      font-size: 13px;
-      color: #8aa4c0;
-    }
-    .arrow {
-      color: #45e5ff;
-      font-size: 20px;
-      opacity: 0.7;
-    }
+    body{margin:0;background:#050b19;color:#edf7ff;font-family:Segoe UI,Arial,sans-serif;padding:32px}
+    .card{max-width:900px;margin:auto;background:#0a1730;border:1px solid #1edcff66;border-radius:24px;padding:34px;box-shadow:0 0 40px #00d9ff12}
+    h1{font-size:34px;margin:0 0 8px}
+    h2{color:#45e5ff}
+    .tag{display:inline-block;padding:7px 12px;border-radius:99px;background:#325eea;color:white}
+    p,li{color:#b9cbe3;line-height:1.8}
+    .box{padding:18px;border-radius:16px;background:#071126;border:1px solid #8a5cff55;margin-top:22px}
+    .document-list{display:grid;gap:16px;margin-top:18px}
+    .doc-card{padding:16px;background:#050f22;border:1px solid #24558f66;border-radius:14px}
+    .doc-card h3{margin:0 0 8px;color:#45e5ff}
+    .doc-card>p{margin:0 0 12px}
+    .pdf-viewer{overflow:hidden;border:1px solid #24558f66;border-radius:12px;background:#fff}
+    .pdf-viewer iframe{display:block;width:100%;height:min(76vh,820px);min-height:520px;border:0;background:#fff}
+    .sql-document{margin-top:10px;background:#050f22;border:1px solid #24558f66;border-radius:12px;overflow:hidden}
+    .sql-document summary{padding:14px 16px;cursor:pointer;color:#45e5ff;font-weight:700}
+    .sql-scroll{max-height:420px;overflow:auto;border-top:1px solid #24558f66}
+    .sql-scroll pre{margin:0;padding:16px;color:#d5e5f8;font:12px/1.55 Consolas,Monaco,monospace;white-space:pre;tab-size:2}
+    .sql-scroll code{font:inherit}
+    .doc-note{color:#ffcf82!important;font-size:13px}
+    @media(max-width:600px){body{padding:14px}.card{padding:20px}.pdf-viewer iframe{height:68vh;min-height:400px}.sql-scroll{max-height:50vh}}
   </style>
 </head>
 <body>
-  <main class="card">
-    <span class="tag">Semana 05 · Actividad 1</span>
-    <h1>Manual Azure SQL · Grados y Títulos</h1>
-    <p class="subtitle">Unidad 2 · Desarrollo</p>
-    <p class="desc">Manual ilustrado paso a paso: del acceso institucional a las tablas relacionadas y la primera consulta desde SSMS.</p>
+<main class="card">
+  <span class="tag">Semana 05 · Actividad 1</span>
+  <h1>Manual Azure SQL · Grados y Títulos</h1>
+  <p><b>Unidad 2 · Desarrollo</b></p>
+  <p>Manual ilustrado paso a paso: del acceso institucional a las tablas relacionadas y la primera consulta desde SSMS.</p>
 
-    <div class="box">
-      <h2>📘 Evidencia académica</h2>
-      <div class="file-list">
-        <a class="file-btn" href="https://dm3986012.github.io/portafolio-_final-/actividades/semana-05/Manual_Azure_SQL_Semana05.pdf" target="_blank">
-          <div class="file-icon pdf-icon">📄</div>
-          <div class="file-info">
-            <div class="file-name">Manual_Azure_SQL_Semana05.pdf</div>
-            <div class="file-desc">Manual completo ilustrado · 11 páginas</div>
-          </div>
-          <div class="arrow">→</div>
-        </a>
+  <div class="box">
+    <h2>📂 Documentos de la actividad</h2>
+    <p>Lee el manual PDF y consulta el script SQL aquí mismo, sin descargarlos. El SQL se muestra en modo de solo lectura; esta página no ejecuta comandos.</p>
 
-        <a class="file-btn" href="https://dm3986012.github.io/portafolio-_final-/actividades/semana-05/Grados_y_Titulos.sql" target="_blank">
-          <div class="file-icon sql-icon">💻</div>
-          <div class="file-info">
-            <div class="file-name">Grados_y_Titulos.sql</div>
-            <div class="file-desc">Script SQL · Crear tablas + datos + consultas</div>
+    <div class="document-list">
+      <section class="doc-card">
+        <h3>📕 Manual Azure SQL — Grados y Títulos</h3>
+        <p>PDF · 11 páginas · Base de Datos II · Semana 05</p>
+        <div class="pdf-viewer">
+          <iframe src="Manual_Azure_SQL_Semana05.pdf#toolbar=1&navpanes=0&view=FitH" title="Manual Azure SQL Grados y Títulos" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <section class="doc-card">
+        <h3>💻 Script SQL</h3>
+        <p>Abre el título para leer el contenido en esta página.</p>
+        <details class="sql-document" open>
+          <summary>Grados_y_Titulos.sql</summary>
+          <div class="sql-scroll">
+            <pre><code data-sql-src="Grados_y_Titulos.sql">Cargando script SQL…</code></pre>
           </div>
-          <div class="arrow">→</div>
-        </a>
-      </div>
+        </details>
+        <p class="doc-note">⚠️ El script contiene comandos SQL para crear tablas y datos. Solo se muestra aquí: no se ejecuta al abrir la actividad.</p>
+      </section>
     </div>
-  </main>
+  </div>
+</main>
+
+<script>
+(function(){
+  document.querySelectorAll("[data-sql-src]").forEach(function(code){
+    var fileName = code.getAttribute("data-sql-src");
+    fetch(encodeURIComponent(fileName)).then(function(response){
+      if(!response.ok) throw new Error("No se pudo cargar el archivo SQL");
+      return response.text();
+    }).then(function(text){
+      code.textContent = text;
+    }).catch(function(){
+      code.textContent = "No se pudo mostrar este SQL. Comprueba tu conexión e inténtalo de nuevo.";
+    });
+  });
+})();
+</script>
 </body>
 </html>
