@@ -7,18 +7,19 @@
   <style>
     body{margin:0;background:#050b19;color:#edf7ff;font-family:Segoe UI,Arial,sans-serif;padding:32px}
     .card{max-width:900px;margin:auto;background:#0a1730;border:1px solid #1edcff66;border-radius:24px;padding:34px;box-shadow:0 0 40px #00d9ff12}
-    h1{font-size:34px;margin:0 0 8px}
-    h2{color:#45e5ff}
-    .tag{display:inline-block;padding:7px 12px;border-radius:99px;background:#325eea;color:white}
-    p,li{color:#b9cbe3;line-height:1.8}
-    .box{padding:18px;border-radius:16px;background:#071126;border:1px solid #8a5cff55;margin-top:22px}
-    .document-list{display:grid;gap:16px;margin-top:18px}
-    .doc-card{padding:16px;background:#050f22;border:1px solid #24558f66;border-radius:14px}
+    h1{font-size:28px;margin:0 0 8px}
+    h2{color:#45e5ff;margin:0 0 12px}
+    .tag{display:inline-block;padding:7px 12px;border-radius:99px;background:#325eea;color:white;font-size:13px}
+    p{color:#b9cbe3;line-height:1.7}
+    .box{padding:18px;border-radius:16px;background:#071126;border:1px solid #8a5cff55;margin-top:20px}
+    .doc-card{padding:16px;background:#050f22;border:1px solid #24558f66;border-radius:14px;margin-top:14px}
     .doc-card h3{margin:0 0 8px;color:#45e5ff}
-    .doc-card>p{margin:0 0 12px}
-    .pdf-viewer{overflow:hidden;border:1px solid #24558f66;border-radius:12px;background:#fff}
-    .pdf-viewer iframe{display:block;width:100%;height:min(76vh,820px);min-height:520px;border:0;background:#fff}
-    @media(max-width:600px){body{padding:14px}.card{padding:20px}.pdf-viewer iframe{height:68vh;min-height:400px}}
+    .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid #1edcff88;background:#0d2240;color:#45e5ff}
+    .btn.primary{background:linear-gradient(135deg,#188dff,#9a45ff);color:#fff;border:0}
+    .pdf-viewer{overflow:hidden;border:1px solid #24558f66;border-radius:12px;background:#fff;margin-top:12px}
+    .pdf-viewer iframe,.pdf-viewer object{display:block;width:100%;height:min(75vh,800px);min-height:480px;border:0}
+    @media(max-width:600px){body{padding:14px}.card{padding:20px}h1{font-size:24px}.pdf-viewer iframe,.pdf-viewer object{height:70vh;min-height:360px}}
   </style>
 </head>
 <body>
@@ -29,17 +30,19 @@
   <p>FILEGROWTH, MAXSIZE, filegroups y monitoreo de espacio en SQL Server.</p>
 
   <div class="box">
-    <h2>📂 Documentos de la actividad</h2>
-    <p>Lee la infografía aquí mismo, sin descargarla.</p>
+    <h2>📂 Documento de la actividad</h2>
+    <div class="doc-card">
+      <h3>🖼️ Infografías - Configuración física</h3>
+      <p>PDF · Niveles 01–04 · Crecimiento de archivos · Filegroups · Memoria SQL Server</p>
 
-    <div class="document-list">
-      <section class="doc-card">
-        <h3>🖼️ Infografías - Configuración física</h3>
-        <p>PDF · Niveles 01–04 · Crecimiento de archivos · Filegroups · Memoria SQL Server</p>
-        <div class="pdf-viewer">
-          <iframe src="Actividad_3_Infografias_Semana_5_REDISENO.pdf#toolbar=1&navpanes=0&view=FitH" title="Infografías Actividad 1 Semana 08" loading="lazy"></iframe>
-        </div>
-      </section>
+      <div class="btn-row">
+        <a class="btn primary" href="Actividad_3_Infografias_Semana_5_REDISENO.pdf" target="_blank">📄 Abrir / Descargar PDF</a>
+        <a class="btn" href="https://docs.google.com/gview?embedded=true&url=https://dm3986012.github.io/portafolio-_final-/actividades/semana-08/Actividad_3_Infografias_Semana_5_REDISENO.pdf" target="_blank">📱 Ver en el celular</a>
+      </div>
+
+      <div class="pdf-viewer">
+        <iframe src="https://docs.google.com/gview?embedded=true&url=https://dm3986012.github.io/portafolio-_final-/actividades/semana-08/Actividad_3_Infografias_Semana_5_REDISENO.pdf" title="Infografías Semana 08"></iframe>
+      </div>
     </div>
   </div>
 </main>
