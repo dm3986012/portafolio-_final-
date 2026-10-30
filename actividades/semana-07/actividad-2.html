@@ -1,86 +1,47 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Semana 07 · Actividad 2</title>
-<style>
-body{margin:0;background:#050b19;color:#edf7ff;font-family:Segoe UI,Arial,sans-serif;padding:32px}
-.card{max-width:920px;margin:auto;background:#0a1730;border:1px solid #1edcff66;border-radius:24px;padding:34px;box-shadow:0 0 40px #00d9ff12}
-h1{font-size:32px;margin:0 0 8px}
-h2{color:#45e5ff;margin:0 0 12px;font-size:20px}
-.tag{display:inline-block;padding:7px 12px;border-radius:99px;background:#325eea;color:white;font-size:13px}
-p,li{color:#b9cbe3;line-height:1.7}
-.box{padding:20px;border-radius:16px;background:#071126;border:1px solid #8a5cff55;margin-top:20px}
-.btn-pdf{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:linear-gradient(135deg,#0d2240,#132a4a);border:1px solid #1edcff88;border-radius:14px;color:#45e5ff;text-decoration:none;font-weight:700;font-size:15px;transition:.2s}
-.btn-pdf:hover{transform:translateY(-2px);box-shadow:0 0 20px #1edcff33;border-color:#45e5ff}
-.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.lab-card{padding:14px;border-radius:12px;background:#0a1a32;border:1px solid #24558f55}
-.lab-card strong{color:#7dd3fc;display:block;margin-bottom:4px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-.gallery figure{margin:0;background:#050f22;border:1px solid #24558f66;border-radius:14px;overflow:hidden}
-.gallery img{display:block;width:100%;height:auto;object-fit:cover}
-.gallery figcaption{padding:8px 12px;font-size:12px;color:#9bb0cc}
-#noImgMsg{color:#6f88ac;font-size:13px;margin-top:12px}
-@media(max-width:600px){.lab-grid,.gallery{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Semana 07 · Actividad 2</title>
+  <style>
+    body{margin:0;background:#050b19;color:#edf7ff;font-family:Segoe UI,Arial,sans-serif;padding:32px}
+    .card{max-width:900px;margin:auto;background:#0a1730;border:1px solid #1edcff66;border-radius:24px;padding:34px;box-shadow:0 0 40px #00d9ff12}
+    h1{font-size:34px;margin:0 0 8px}
+    h2{color:#45e5ff}
+    .tag{display:inline-block;padding:7px 12px;border-radius:99px;background:#325eea;color:white}
+    p,li{color:#b9cbe3;line-height:1.8}
+    .box{padding:18px;border-radius:16px;background:#071126;border:1px solid #8a5cff55;margin-top:22px}
+    .document-list{display:grid;gap:16px;margin-top:18px}
+    .doc-card{padding:16px;background:#050f22;border:1px solid #24558f66;border-radius:14px}
+    .doc-card h3{margin:0 0 8px;color:#45e5ff}
+    .doc-card>p{margin:0 0 12px}
+    .pdf-viewer{overflow:hidden;border:1px solid #24558f66;border-radius:12px;background:#fff}
+    .pdf-viewer iframe{display:block;width:100%;height:min(76vh,820px);min-height:520px;border:0;background:#fff}
+    @media(max-width:600px){body{padding:14px}.card{padding:20px}.pdf-viewer iframe{height:68vh;min-height:400px}}
+  </style>
 </head>
 <body>
 <main class="card">
   <span class="tag">Semana 07 · Actividad 2</span>
   <h1>Configuración física y distribución de archivos</h1>
-  <p><b>Unidad 2 · Desarrollo</b> · Análisis, diseño e implementación</p>
+  <p><b>Unidad 2 · Desarrollo</b></p>
+  <p>Filegroups, crecimiento de archivos, asignación de tablas y monitoreo de espacio.</p>
 
   <div class="box">
-    <h2>🎯 Contenido de la guía</h2>
-    <div class="lab-grid">
-      <div class="lab-card"><strong>1. Crecimiento de archivos</strong> FILEGROWTH y MAXSIZE: crecimiento fijo vs porcentual</div>
-      <div class="lab-card"><strong>2. Filegroups secundarios</strong> Múltiples filegroups para módulos especializados</div>
-      <div class="lab-card"><strong>3. Asignación de tablas</strong> Tablas y restricciones a filegroups específicos</div>
-      <div class="lab-card"><strong>4. Monitoreo</strong> Auditoría de espacio físico y mantenimiento de archivos</div>
+    <h2>📂 Documentos de la actividad</h2>
+    <p>Lee la guía práctica aquí mismo, sin descargarla.</p>
+
+    <div class="document-list">
+      <section class="doc-card">
+        <h3>📕 Guía Actividad 2</h3>
+        <p>PDF · 4 guías · FILEGROWTH · Filegroups · Asignación de tablas · Monitoreo</p>
+        <div class="pdf-viewer">
+          <iframe src="Actividad_2_Guias_Semana_5_MEJORADO_CON_CAPTURAS.pdf#toolbar=1&navpanes=0&view=FitH" title="Guía Actividad 2 Semana 07" loading="lazy"></iframe>
+        </div>
+      </section>
     </div>
   </div>
-
-  <div class="box">
-    <h2>📄 Documento de evidencia</h2>
-    <p style="margin-bottom:16px">Guía práctica con misiones, parámetros clave y capturas de ejecución en SSMS.</p>
-    <a class="btn-pdf" href="Actividad_2_Guias_Semana_5_MEJORADO_CON_CAPTURAS.pdf" target="_blank">📄 Abrir Guía Actividad 2 (PDF)</a>
-  </div>
-
-  <div class="box">
-    <h2>🖼️ Capturas / Evidencias visuales</h2>
-    <p id="noImgMsg">Aún no se han cargado imágenes. Agrega fotos en la carpeta <b>img2/</b> con nombres evidencia-1.jpg, evidencia-2.jpg… y aparecerán aquí automáticamente.</p>
-    <div class="gallery" id="autoGallery" style="display:none"></div>
-  </div>
 </main>
-<script>
-(function(){
-  var exts=['webp','png','jpg','jpeg','WEBP','PNG','JPG','JPEG'];
-  var maxNum=20;
-  var gallery=document.getElementById('autoGallery');
-  var msg=document.getElementById('noImgMsg');
-  var found=false;
-  function showFound(src,num){
-    if(!found){found=true;msg.style.display='none';gallery.style.display='grid';}
-    var fig=document.createElement('figure');
-    var im=document.createElement('img');
-    im.src=src;im.alt='Evidencia '+num;
-    var cap=document.createElement('figcaption');
-    cap.textContent='Evidencia '+num;
-    fig.appendChild(im);fig.appendChild(cap);
-    gallery.appendChild(fig);
-  }
-  function tryNum(num,extIdx){
-    if(num>maxNum)return;
-    if(extIdx>=exts.length){tryNum(num+1,0);return;}
-    var src='img2/evidencia-'+num+'.'+exts[extIdx];
-    var img=new Image();
-    img.onload=function(){showFound(src,num);tryNum(num+1,0);};
-    img.onerror=function(){tryNum(num,extIdx+1);};
-    img.src=src;
-  }
-  tryNum(1,0);
-})();
-</script>
 </body>
 </html>
