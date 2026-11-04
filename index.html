@@ -1,68 +1,839 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mi Portafolio Académico · David Martínez</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portafolio Académico · David Martínez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#030918;--panel:#07152d;--panel2:#0a1b37;--text:#f0f7ff;--muted:#9bb0cc;--cyan:#22dcff;--blue:#2f73ff;--purple:#9a55ff;--pink:#ef4bd5;--green:#27dfb1;--orange:#ffb33d;--line:#1b79a966;--shadow:0 0 35px #16dfff16}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 75% 5%,#3e18a51f,transparent 28%),radial-gradient(circle at 10% 55%,#00d9ff10,transparent 30%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#22dcff08 1px,transparent 1px),linear-gradient(90deg,#22dcff08 1px,transparent 1px);background-size:44px 44px}a{text-decoration:none;color:inherit}button,input{font:inherit}.topbar{height:68px;position:fixed;inset:0 0 auto 0;z-index:100;display:grid;grid-template-columns:260px 1fr 150px;align-items:center;padding:0 20px;background:#030b1beF;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:18px;white-space:nowrap}.brand-mark{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;border:1px solid var(--cyan);color:var(--cyan);background:#0a2450;box-shadow:0 0 24px #22dcff33}.brand span{color:var(--cyan)}.topnav{display:flex;justify-content:center;gap:4px}.topnav a{padding:11px 15px;border-radius:14px;color:#d8e8fb;transition:.25s}.topnav a:hover,.topnav a.active{background:linear-gradient(135deg,#1bd9ff1f,#9655ff2b);box-shadow:inset 0 0 0 1px #2adfff33,0 0 20px #22dcff10;color:#fff}.controls{display:flex;justify-content:flex-end;gap:8px}.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#081932;color:#fff;cursor:pointer}.layout{display:grid;grid-template-columns:260px minmax(0,1fr);padding-top:68px;min-height:100vh}.sidebar{position:fixed;top:68px;left:0;bottom:0;width:260px;padding:22px 16px;background:#040e20f2;border-right:1px solid var(--line);backdrop-filter:blur(15px);overflow-y:auto;z-index:40}.profile{text-align:center;padding-bottom:18px}.avatar{width:82px;height:82px;border-radius:50%;margin:auto;display:grid;place-items:center;font-weight:900;font-size:25px;background:radial-gradient(circle at 35% 25%,#fff 0 4%,#50e7ff 5% 11%,#8c54ff 36%,#13275b 72%);border:3px solid #9a63ff;box-shadow:0 0 30px #8c54ff66;overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}.profile h3{margin:10px 0 4px}.profile small{color:var(--muted)}.quote{font-size:12px;line-height:1.5;color:#b7edff;font-style:italic}.side-nav{display:grid;gap:5px}.side-nav a,.unit-link{padding:11px 12px;border-radius:12px;color:#c9d9ee;display:flex;align-items:center;gap:11px;cursor:pointer}.side-nav a:hover,.side-nav a.active,.unit-link:hover{background:linear-gradient(90deg,#1c78ff42,#9a55ff22);color:#fff}.side-icon{width:22px;text-align:center}.unit-link{justify-content:space-between}.motto{margin-top:20px;padding:16px;border-radius:18px;border:1px solid #ef4bd555;background:linear-gradient(135deg,#10284bd9,#350e45aa);text-align:center}.motto .bar{height:6px;border-radius:9px;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));margin-top:12px}.content{grid-column:2;min-width:0;padding:24px 26px 55px;max-width:1540px;width:100%;margin:auto}.hero{position:relative;min-height:335px;border:1px solid #22dcff88;border-radius:25px;overflow:hidden;box-shadow:var(--shadow);background:#06142b}.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,#041026f5 0%,#041026e8 32%,#04102680 57%,#04102618 100%),url('assets/hero-cover.jpg');background-position:center;background-size:cover;filter:saturate(1.1)}.hero-content{position:relative;z-index:2;width:58%;padding:43px 42px}.hello{font-weight:800;color:#9cefff;font-size:19px}.hero h1{font-size:58px;line-height:1;margin:14px 0;background:linear-gradient(90deg,#fff,#73e9ff,#9e63ff,#ef4bd5);-webkit-background-clip:text;background-clip:text;color:transparent}.hero h2{font-size:27px;margin:0 0 22px}.hero p{color:#c2d3e8;line-height:1.7;font-size:16px;max-width:700px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{border:0;border-radius:14px;padding:13px 19px;color:#fff;font-weight:800;background:linear-gradient(135deg,#188dff,#9a45ff);cursor:pointer;box-shadow:0 0 24px #4d6dff35}.btn.outline{background:#06152d;border:1px solid #27dcff99}.btn:hover{transform:translateY(-2px);box-shadow:0 0 28px #36ddff30}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}.stat{min-height:112px;padding:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#091a35f2,#071329f2);display:flex;align-items:center;gap:15px;box-shadow:var(--shadow);transition:.25s}.stat:hover{transform:translateY(-3px)}.stat-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:27px;background:linear-gradient(135deg,#21caff,#4365ff);box-shadow:0 0 24px #22dcff33}.stat:nth-child(2) .stat-icon{background:linear-gradient(135deg,#25e5a5,#2fc7ff)}.stat:nth-child(3) .stat-icon{background:linear-gradient(135deg,#ed45d2,#8955ff)}.stat:nth-child(4) .stat-icon{background:linear-gradient(135deg,#ffca45,#ff7d38)}.stat b{font-size:30px}.stat span{display:block;color:var(--muted);margin-top:3px}.dashboard{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:20px;margin-top:22px}.panel{background:linear-gradient(145deg,#07162ff2,#061329ee);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)}.panel-head{padding:20px 24px;border-bottom:1px solid #1a548055;display:flex;align-items:center;justify-content:space-between}.panel-head h2{margin:0;font-size:26px}.panel-head a{color:var(--cyan)}.activities{padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.activity{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr) 42px;gap:14px;align-items:center;padding:16px;border-radius:18px;background:#091733;border:1px solid #275a9366;transition:.25s}.activity:hover{transform:translateY(-3px);border-color:#28dfff88;box-shadow:0 0 24px #22dcff12}.activity-img{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-size:30px;background:linear-gradient(145deg,#b747f0,#793dff);box-shadow:0 0 22px #b747f044}.activity:nth-child(2) .activity-img{background:linear-gradient(145deg,#1bd3e4,#1a8bff)}.activity:nth-child(3) .activity-img{background:linear-gradient(145deg,#df4ce4,#713cff)}.activity:nth-child(4) .activity-img{background:linear-gradient(145deg,#27e3c1,#1679ff)}.tag{display:inline-block;padding:5px 10px;border-radius:99px;background:#235de0;color:#fff;font-size:11px;font-weight:800}.activity h4{margin:7px 0 4px;font-size:16px}.activity p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.chip,.status{font-size:10px;padding:5px 8px;border-radius:9px;background:#0d2446;color:#bdeeff}.status{margin-left:auto;color:#ffd46d;background:#4a331022}.open-mini{width:40px;height:40px;border-radius:50%;border:1px solid #2cdfff88;background:#06254a;color:#fff;cursor:pointer;font-size:20px}.right{display:grid;gap:20px;align-content:start}.progress{padding:20px}.progress-circle{width:150px;height:150px;border-radius:50%;margin:10px auto 16px;display:grid;place-items:center;background:conic-gradient(var(--cyan) 0 0%,#163b66 0 100%);box-shadow:0 0 30px #22dcff18;position:relative}.progress-circle:after{content:"";position:absolute;inset:12px;border-radius:50%;background:#07152d}.progress-circle b{position:relative;z-index:1;font-size:28px}.legend{display:grid;gap:9px;color:var(--muted);font-size:12px}.legend span{display:flex;justify-content:space-between}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px}.units-panel{padding-bottom:12px}.unit-card{margin:10px 14px;padding:12px;border:1px solid #285b9366;border-radius:14px;display:flex;align-items:center;gap:10px;cursor:pointer;background:#081a35;transition:.2s}.unit-card:hover{border-color:#23dfff99;transform:translateX(3px)}.unit-badge{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#9b51ff,#3b77ff);font-weight:900}.unit-card small{display:block;color:var(--muted);margin-top:3px}.search{margin:0 14px 14px}.search input{width:100%;padding:12px 14px;border-radius:13px;border:1px solid #24598b88;background:#06142c;color:#fff;outline:0}.search input:focus{border-color:var(--cyan);box-shadow:0 0 20px #22dcff18}.projects{margin-top:22px}.project-grid{padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.project{padding:20px;border-radius:18px;background:#081a35;border:1px solid #255a9066;transition:.25s}.project:hover{transform:translateY(-4px);border-color:#9a55ff88}.project-icon{font-size:30px}.project h3{margin:10px 0 5px}.project p{color:var(--muted);font-size:12px;margin:0;line-height:1.5}.units-section{margin-top:22px}.unit-big-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:18px}.unit-big{padding:20px;border-radius:20px;background:linear-gradient(145deg,#081b36,#07132a);border:1px solid #245a8d77;cursor:pointer;transition:.25s;position:relative;overflow:hidden}.unit-big:before{content:"";position:absolute;inset:auto -30px -60px auto;width:180px;height:180px;background:radial-gradient(circle,#26dfff25,transparent 70%)}.unit-big:hover,.unit-big.open{border-color:#24ddff99;box-shadow:0 0 30px #22dcff14}.big-icon{font-size:35px}.unit-big h3{margin:10px 0 6px}.unit-big p{color:var(--muted);margin:0}.week-list{display:none;margin-top:14px;gap:7px}.unit-big.open .week-list{display:grid}.week{padding:10px 12px;border-radius:11px;background:#06152d;border:1px solid #1f548366;color:#cfe0f3;font-size:12px;cursor:pointer}.week:hover{border-color:#22dcff88;color:#fff}.chatbot{position:fixed;right:22px;bottom:20px;z-index:150}.chat-button{width:78px;height:78px;border-radius:50%;border:2px solid var(--cyan);background:#071a38;box-shadow:0 0 30px #22dcff55;cursor:pointer;display:grid;place-items:center;animation:pulse 2.7s infinite;overflow:hidden}.chat-button img{width:66px;height:74px;object-fit:contain}.chat-window{display:none;width:365px;height:500px;margin-bottom:12px;border:1px solid #25dcff88;border-radius:22px;overflow:hidden;background:#061329;box-shadow:0 0 45px #22dcff25}.chat-window.open{display:flex;flex-direction:column}.chat-head{padding:14px;display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#092956,#2b124f);border-bottom:1px solid var(--line)}.bot-head-img{width:45px;height:52px;object-fit:contain}.chat-head small{display:block;color:#9eb4d3;font-size:11px;margin-top:2px}.chat-close{margin-left:auto;background:transparent;border:0;color:#fff;font-size:24px;cursor:pointer}.messages{flex:1;overflow:auto;padding:15px;display:grid;align-content:start;gap:9px}.msg{max-width:84%;padding:10px 12px;border-radius:14px;font-size:12px;line-height:1.5}.msg.bot{background:#0b2345;border:1px solid #1f5c8c;color:#cfe4f8}.msg.user{margin-left:auto;background:linear-gradient(135deg,#246ef0,#9147ed);color:#fff}.quick{display:flex;gap:6px;flex-wrap:wrap;padding:10px 12px}.quick button{border:1px solid #22dcff55;background:#071d3a;color:#bceeff;border-radius:99px;padding:7px 9px;font-size:10px;cursor:pointer}.chat-input{display:flex;padding:10px;border-top:1px solid var(--line);gap:8px}.chat-input input{flex:1;background:#07172f;border:1px solid #4870a633;color:#fff;border-radius:12px;padding:10px;outline:0}.chat-input button{width:42px;border:0;border-radius:12px;background:linear-gradient(135deg,#13bfe9,#7750ff);color:#fff;cursor:pointer}.modal{display:none;position:fixed;inset:0;z-index:300;background:#000b;backdrop-filter:blur(8px);padding:30px;align-items:center;justify-content:center}.modal.open{display:flex}.modal-box{width:min(900px,96vw);max-height:88vh;overflow:auto;background:#07162f;border:1px solid #22dcff88;border-radius:22px;box-shadow:0 0 60px #22dcff25}.modal-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0}.modal-close{width:38px;height:38px;border:1px solid var(--line);background:#0a203e;color:#fff;border-radius:50%;font-size:22px;cursor:pointer}.modal-body{padding:20px}.file-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}.file-card{padding:18px;border:1px solid #275a9166;border-radius:17px;background:#091a35}.file-card h3{margin:0 0 7px}.file-card p{color:var(--muted);line-height:1.6;font-size:13px}.file-card .actions{margin-top:14px}.viewer{border:1px solid #285d9566;border-radius:18px;overflow:hidden;background:#041026}.viewer iframe{width:100%;height:520px;border:0;background:#fff}.viewer img{display:block;max-width:100%;max-height:560px;margin:auto}.upload-zone{padding:24px;text-align:center;border:1px dashed #2ddfff88;border-radius:17px;background:#06152c}.upload-zone input{margin-top:12px;color:#cfe3f8}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;z-index:500;background:#0a1e3b;border:1px solid #25dcff88;color:#fff;padding:12px 18px;border-radius:13px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}@keyframes pulse{50%{transform:scale(1.04);box-shadow:0 0 42px #22dcff66}}@media(max-width:1100px){.topbar{grid-template-columns:220px 1fr 90px}.topnav a{padding:10px 9px}.layout{grid-template-columns:220px minmax(0,1fr)}.sidebar{width:220px}.content{padding:20px}.hero-content{width:65%}.hero h1{font-size:48px}.dashboard{grid-template-columns:1fr}.right{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}@media(max-width:760px){.topbar{grid-template-columns:1fr auto}.topnav{display:none}.brand{min-width:0}.layout{display:block}.sidebar{position:relative;top:auto;width:100%;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:12px}.profile{display:none}.side-nav{grid-template-columns:repeat(3,1fr)}.unit-link{display:none}.motto{display:none}.content{padding:14px}.hero{min-height:500px}.hero-bg{background-position:65% center}.hero-content{width:100%;padding:30px 22px}.hero h1{font-size:42px}.stats{grid-template-columns:1fr 1fr}.activities,.project-grid,.unit-big-grid,.file-list,.right{grid-template-columns:1fr}.chat-window{width:min(365px,calc(100vw - 24px))}.chatbot{right:12px;bottom:12px}.chat-button{width:68px;height:68px}.chat-button img{width:57px;height:65px}}
-body.light{--bg:#eef5ff;--panel:#ffffff;--text:#0b1b33;--muted:#4f6583;--cyan:#0a8fb3;--line:#0a8fb355;--shadow:0 6px 24px #1b3a6b14}body.light:before{background-image:linear-gradient(#0a8fb30d 1px,transparent 1px),linear-gradient(90deg,#0a8fb30d 1px,transparent 1px)}body.light .topbar{background:#ffffffee}body.light .topnav a,body.light .side-nav a,body.light .unit-link{color:#1c3556}body.light .topnav a:hover,body.light .topnav a.active,body.light .side-nav a:hover,body.light .side-nav a.active,body.light .unit-link:hover{color:#0b1b33}body.light .sidebar{background:#ffffffef}body.light .panel,body.light .stat,body.light .modal-box{background:#ffffff}body.light .activity,body.light .project,body.light .unit-card,body.light .file-card,body.light .unit-big,body.light .week{background:#f4f8ff;color:#0b1b33}body.light .unit-big h3,body.light .file-card h3,body.light .project h3,body.light .activity h4{color:#0b1b33}body.light .icon-btn,body.light .open-mini,body.light .modal-close{background:#e3eeff;color:#0b1b33}body.light .search input,body.light .chat-input input{background:#f4f8ff;color:#0b1b33}body.light .progress-circle:after{background:#ffffff}body.light .upload-zone{background:#f4f8ff}body.light .hero h2,body.light .hero p,body.light .hello{color:#e9f4ff}.status.ok{color:#27dfb1;background:#0c3b3322}</style></head><body>
-<header class="topbar"><a class="brand" href="#inicio"><div class="brand-mark"></></div><div>Mi Portafolio <span>Académico</span></div></a><nav class="topnav"><a class="active" href="#inicio">⌂ Inicio</a><a href="#sobre">♙ Sobre mí</a><a href="#curso">▣ Curso</a><a href="#proyectos">▱ Proyectos</a><a href="#contacto">✉ Contacto</a></nav><div class="controls"><button class="icon-btn" onclick="toggleTheme()">☾</button></div></header>
-<div class="layout"><aside class="sidebar"><div class="profile"><div class="avatar"><img src="assets/profile-david.png" alt="David Martínez"></div><h3>David Martínez</h3><small>Estudiante de Ingeniería de Sistemas</small><div class="quote">“Programar hoy, construye el mañana” 🚀</div></div><nav class="side-nav"><a class="active" href="#inicio">⌂ <span>Inicio</span></a><a href="#sobre">♙ <span>Sobre mí</span></a><a href="#curso">▣ <span>Curso</span></a><div class="unit-link" onclick="openWeek(1)"><span>▱ Unidad 1</span><span>›</span></div><div class="unit-link" onclick="openWeek(5)"><span>▱ Unidad 2</span><span>›</span></div><div class="unit-link" onclick="openWeek(9)"><span>▱ Unidad 3</span><span>›</span></div><div class="unit-link" onclick="openWeek(13)"><span>▱ Unidad 4</span><span>›</span></div><a href="#proyectos">▱ <span>Proyectos</span></a><a href="#contacto">✉ <span>Contacto</span></a></nav><div class="motto">🚀<br>La disciplina de hoy<br>construye el éxito de mañana.<div class="bar"></div></div></aside>
-<main class="content" id="inicio">
-<section class="hero"><div class="hero-bg"></div><div class="hero-content"><div class="hello">👋 Hola, soy</div><h1>David Martínez</h1><h2>Estudiante de Ingeniería de Sistemas</h2><p>Este es mi portafolio académico donde presento mis actividades, evidencias, proyectos y aprendizajes de cada semana del curso. ¡Bienvenido!</p><div class="actions"><button class="btn" onclick="document.getElementById('curso').scrollIntoView({behavior:'smooth'})">▣ Ver mi curso</button><button class="btn outline" onclick="downloadCV()">⇩ Descargar CV</button></div></div></section>
-<section class="stats"><div class="stat"><div class="stat-icon">▣</div><div><b>4</b><span>Unidades</span></div></div><div class="stat"><div class="stat-icon">▦</div><div><b>16</b><span>Semanas</span></div></div><div class="stat"><div class="stat-icon">▤</div><div><b>31</b><span>Actividades</span></div></div><div class="stat"><div class="stat-icon">✓</div><div><b id="progressStat">0%</b><span>Progreso global</span></div></div></section>
-<section class="dashboard" id="curso"><div class="panel"><div class="panel-head"><h2>▦ Últimas Actividades</h2><a href="#" onclick="openAllWeeks();return false">Ver todas →</a></div><div class="activities" id="latest"></div></div><div class="right"><div class="panel progress"><div class="panel-head"><h2>Mi Progreso</h2></div><div class="progress-circle"><b id="progressCircle">0%</b></div><div class="legend"><span><span><i class="dot" style="background:var(--green)"></i>Completadas</span><b id="doneCount">0</b></span><span><span><i class="dot" style="background:var(--orange)"></i>Pendientes</span><b id="pendingCount">31</b></span></div></div><div class="panel units-panel"><div class="panel-head"><h2>Unidades del Curso</h2></div><div class="search"><input id="search" placeholder="🔎 Buscar actividad..." oninput="searchActivities(this.value)"></div><div id="miniUnits"></div></div></div></section>
-<section class="projects" id="proyectos"><div class="panel"><div class="panel-head"><h2>🚀 Mis Proyectos</h2><a href="#">Ver más →</a></div><div class="project-grid"><div class="project"><div class="project-icon">🌐</div><h3>Sistema Web</h3><p>Desarrollo web con HTML, CSS y JavaScript.</p></div><div class="project"><div class="project-icon">🗄️</div><h3>Base de Datos</h3><p>Modelo y consultas SQL.</p></div><div class="project"><div class="project-icon">📱</div><h3>Aplicación Móvil</h3><p>Diseño y desarrollo de aplicaciones.</p></div></div></div></section>
-<section class="units-section" id="sobre"><div class="panel"><div class="panel-head"><h2>📚 Unidades del Curso</h2></div><div class="unit-big-grid" id="unitsGrid"></div></div></section>
-</main></div>
+:root{
+  --bg:#050b1a;
+  --panel:rgba(10,22,45,0.72);
+  --panel-solid:#0a162d;
+  --text:#f0f7ff;
+  --muted:#8ba3c7;
+  --cyan:#22dcff;
+  --blue:#3b82f6;
+  --purple:#a855f7;
+  --pink:#ec4899;
+  --green:#22c55e;
+  --orange:#f59e0b;
+  --line:rgba(34,220,255,0.18);
+  --glow:0 0 40px rgba(34,220,255,0.15);
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%,rgba(168,85,247,0.18),transparent),
+    radial-gradient(ellipse 60% 40% at 90% 10%,rgba(34,220,255,0.12),transparent),
+    radial-gradient(ellipse 50% 30% at 50% 100%,rgba(59,130,246,0.08),transparent);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(34,220,255,0.03) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(34,220,255,0.03) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit;border:none;outline:none;cursor:pointer}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
 
-<div class="chatbot"><div class="chat-window" id="chatWindow"><div class="chat-head"><img class="bot-head-img" src="assets/robot.png"><div><strong>Asistente del Portafolio</strong><small>● En línea · curso + preguntas generales</small></div><button class="chat-close" onclick="toggleChat()">×</button></div><div class="messages" id="messages"><div class="msg bot">¡Hola! 🤖 Puedo ayudarte con el curso (unidades, SQL, esquemas…) y también con cualquier pregunta general. ¿Qué necesitas?</div></div><div class="quick"><button onclick="quickAsk('¿Qué es la Unidad 2?')">¿Qué es la Unidad 2?</button><button onclick="quickAsk('Explícame los esquemas')">Esquemas</button><button onclick="quickAsk('¿Qué es un índice clustered?')">Índices</button></div><div class="chat-input"><input id="chatInput" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter')sendMessage()"><button onclick="sendMessage()">➤</button></div></div><button class="chat-button" onclick="toggleChat()" title="Abrir asistente"><img src="assets/robot.png" alt="Robot asistente"></button></div>
+/* ===== SIDEBAR ===== */
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:260px;
+  background:rgba(5,12,28,0.92);backdrop-filter:blur(20px);
+  border-right:1px solid var(--line);
+  padding:22px 16px;display:flex;flex-direction:column;gap:18px;
+  overflow-y:auto;z-index:50;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
+.brand-icon{
+  width:36px;height:36px;border-radius:12px;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
+  display:grid;place-items:center;font-size:18px;
+  box-shadow:0 0 20px rgba(34,220,255,0.35);
+}
+.profile{text-align:center;padding:8px 0}
+.avatar{
+  width:78px;height:78px;border-radius:50%;margin:0 auto 10px;
+  border:3px solid transparent;
+  background:linear-gradient(var(--bg),var(--bg)) padding-box,
+             linear-gradient(135deg,var(--cyan),var(--purple),var(--pink)) border-box;
+  overflow:hidden;box-shadow:0 0 28px rgba(168,85,247,0.35);
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.profile h3{font-size:16px;font-weight:700}
+.profile small{color:var(--muted);font-size:12px}
+.badge-level{
+  display:inline-flex;align-items:center;gap:5px;margin-top:8px;
+  padding:4px 10px;border-radius:99px;font-size:11px;font-weight:600;
+  background:rgba(34,220,255,0.12);color:var(--cyan);border:1px solid rgba(34,220,255,0.25);
+}
+.progress-side{margin:6px 0}
+.progress-side .label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+.bar-bg{height:7px;border-radius:99px;background:#0d1f3d;overflow:hidden}
+.bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .6s}
+.side-nav{display:flex;flex-direction:column;gap:4px}
+.side-nav a,.side-nav button{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;
+  border-radius:12px;color:var(--muted);font-size:13.5px;font-weight:500;
+  background:transparent;text-align:left;width:100%;transition:.2s;
+}
+.side-nav a:hover,.side-nav a.active,.side-nav button:hover{
+  background:linear-gradient(90deg,rgba(34,220,255,0.15),rgba(168,85,247,0.1));
+  color:#fff;
+}
+.side-nav a.active{color:var(--cyan)}
+.nav-icon{width:20px;text-align:center;font-size:15px}
+.unit-progress{margin-top:8px}
+.unit-item{margin-bottom:10px}
+.unit-item .u-head{display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px}
+.unit-item .u-name{color:#c5d8f0}
+.unit-item .u-pct{color:var(--cyan);font-weight:600}
+.nuevo-tag{
+  font-size:9px;padding:2px 6px;border-radius:6px;margin-left:auto;
+  background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;font-weight:700;
+}
 
-<div class="modal" id="weekModal"><div class="modal-box"><div class="modal-head"><h2 id="modalTitle">Semana</h2><button class="modal-close" onclick="closeModal()">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
+/* ===== MAIN ===== */
+.main{margin-left:260px;padding:22px 28px 50px;max-width:1480px}
+
+/* Header */
+.top-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.top-header h1{font-size:22px;font-weight:800;background:linear-gradient(90deg,#fff,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.top-actions{display:flex;gap:10px;align-items:center}
+.icon-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--panel);border:1px solid var(--line);color:#fff;
+  display:grid;place-items:center;font-size:16px;transition:.2s;
+}
+.icon-btn:hover{border-color:var(--cyan);box-shadow:0 0 16px rgba(34,220,255,0.25)}
+
+/* Welcome / Hero */
+.hero-card{
+  position:relative;border-radius:22px;padding:28px 32px;margin-bottom:20px;
+  background:linear-gradient(135deg,rgba(12,28,55,0.9),rgba(20,15,45,0.85));
+  border:1px solid var(--line);overflow:hidden;box-shadow:var(--glow);
+}
+.hero-card::before{
+  content:"";position:absolute;right:-40px;top:-40px;width:280px;height:280px;
+  background:radial-gradient(circle,rgba(168,85,247,0.25),transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;z-index:1}
+.hero-text .hello{font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:6px}
+.hero-text h2{font-size:32px;font-weight:800;line-height:1.15;margin-bottom:8px}
+.hero-text h2 span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-text p{color:var(--muted);font-size:14px;max-width:520px;line-height:1.6;margin-bottom:18px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;padding:11px 18px;
+  border-radius:12px;font-weight:700;font-size:13.5px;transition:.2s;
+}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#031018;box-shadow:0 0 24px rgba(34,220,255,0.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 32px rgba(34,220,255,0.5)}
+.btn-outline{background:transparent;border:1px solid rgba(34,220,255,0.4);color:var(--cyan)}
+.btn-outline:hover{background:rgba(34,220,255,0.1)}
+.hero-visual{
+  width:140px;height:140px;border-radius:24px;
+  background:linear-gradient(145deg,rgba(59,130,246,0.2),rgba(168,85,247,0.25));
+  border:1px solid rgba(168,85,247,0.3);
+  display:grid;place-items:center;font-size:64px;
+  box-shadow:0 0 40px rgba(168,85,247,0.2);
+}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.stat-card{
+  background:var(--panel);backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:16px;padding:16px 18px;
+  display:flex;align-items:center;gap:14px;transition:.25s;
+}
+.stat-card:hover{transform:translateY(-3px);border-color:rgba(34,220,255,0.4);box-shadow:var(--glow)}
+.stat-icon{
+  width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:22px;
+}
+.stat-card:nth-child(1) .stat-icon{background:linear-gradient(135deg,#3b82f6,#22dcff)}
+.stat-card:nth-child(2) .stat-icon{background:linear-gradient(135deg,#a855f7,#ec4899)}
+.stat-card:nth-child(3) .stat-icon{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.stat-card:nth-child(4) .stat-icon{background:linear-gradient(135deg,#22c55e,#22dcff)}
+.stat-card b{font-size:22px;font-weight:800;display:block}
+.stat-card span{font-size:12px;color:var(--muted)}
+
+/* Dashboard grid */
+.dash-grid{display:grid;grid-template-columns:1.4fr 1fr 0.9fr;gap:16px;margin-bottom:18px}
+.panel{
+  background:var(--panel);backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.panel-head{
+  padding:14px 18px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.panel-head h3{font-size:15px;font-weight:700}
+.panel-head a,.panel-head .link{font-size:12px;color:var(--cyan);cursor:pointer}
+.panel-body{padding:14px 16px}
+
+/* Activity list */
+.act-item{
+  display:flex;align-items:center;gap:12px;padding:11px 10px;
+  border-radius:12px;margin-bottom:6px;transition:.2s;cursor:pointer;
+  border:1px solid transparent;
+}
+.act-item:hover{background:rgba(34,220,255,0.06);border-color:var(--line)}
+.act-icon{
+  width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:18px;
+  background:linear-gradient(135deg,rgba(168,85,247,0.3),rgba(59,130,246,0.3));
+}
+.act-info{flex:1;min-width:0}
+.act-info h4{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.act-info p{font-size:11px;color:var(--muted);margin-top:2px}
+.act-status{font-size:10px;padding:3px 8px;border-radius:99px;font-weight:600}
+.act-status.ok{background:rgba(34,197,94,0.15);color:var(--green)}
+.act-status.pending{background:rgba(245,158,11,0.15);color:var(--orange)}
+.act-status.review{background:rgba(59,130,246,0.15);color:var(--blue)}
+
+/* Timeline */
+.timeline{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:8px 0}
+.tl-dot{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-size:10px;font-weight:700;border:2px solid var(--line);color:var(--muted);
+  cursor:pointer;transition:.2s;background:#0a162d;
+}
+.tl-dot.done{background:linear-gradient(135deg,var(--cyan),var(--blue));border-color:transparent;color:#031018}
+.tl-dot.current{border-color:var(--cyan);box-shadow:0 0 12px rgba(34,220,255,0.5);color:var(--cyan)}
+.tl-dot:hover{transform:scale(1.15)}
+.tl-legend{display:flex;gap:14px;justify-content:center;margin-top:10px;font-size:11px;color:var(--muted)}
+.tl-legend span{display:flex;align-items:center;gap:5px}
+.tl-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+/* Mini Game Panel */
+.game-panel{display:flex;flex-direction:column;gap:10px}
+.game-card{
+  padding:14px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(8,20,42,0.6);cursor:pointer;transition:.25s;
+}
+.game-card:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 0 20px rgba(34,220,255,0.15)}
+.game-card h4{font-size:13px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:7px}
+.game-card p{font-size:11px;color:var(--muted);line-height:1.4}
+.game-btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.game-btn{
+  padding:7px 12px;border-radius:9px;font-size:11px;font-weight:700;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));color:#031018;
+}
+.game-score{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:6px}
+.hearts{color:#ef4444;letter-spacing:2px}
+
+/* Skills + Achievements */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.skill-bar{margin-bottom:10px}
+.skill-bar .s-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+.skill-bar .s-fill{height:6px;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--purple))}
+.achievements{display:flex;flex-direction:column;gap:8px}
+.ach-item{
+  display:flex;align-items:center;gap:10px;padding:10px;
+  border-radius:12px;background:rgba(8,20,42,0.5);border:1px solid var(--line);
+}
+.ach-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:18px}
+.ach-item b{font-size:12px;display:block}
+.ach-item span{font-size:10px;color:var(--muted)}
+
+/* Units section */
+.units-section{margin-top:8px}
+.units-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.unit-card-big{
+  padding:18px;border-radius:16px;border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(10,22,45,0.8),rgba(15,25,50,0.6));
+  cursor:pointer;transition:.25s;position:relative;overflow:hidden;
+}
+.unit-card-big:hover{border-color:var(--cyan);transform:translateY(-3px);box-shadow:var(--glow)}
+.unit-card-big h3{font-size:15px;margin:8px 0 4px}
+.unit-card-big p{font-size:12px;color:var(--muted)}
+.week-list{display:none;margin-top:12px;gap:5px}
+.unit-card-big.open .week-list{display:grid}
+.week-btn{
+  padding:8px 10px;border-radius:9px;font-size:11px;
+  background:#06142c;border:1px solid var(--line);color:#c5d8f0;
+  text-align:left;transition:.15s;
+}
+.week-btn:hover{border-color:var(--cyan);color:#fff}
+
+/* Chatbot */
+.chatbot{position:fixed;right:22px;bottom:22px;z-index:200}
+.chat-btn{
+  width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,#0a1f3d,var(--panel-solid));
+  border:2px solid var(--cyan);box-shadow:0 0 28px rgba(34,220,255,0.4);
+  display:grid;place-items:center;font-size:28px;animation:pulse 2.5s infinite;
+  position:relative;
+}
+.chat-btn .notif{
+  position:absolute;top:-2px;right:-2px;width:18px;height:18px;border-radius:50%;
+  background:var(--pink);font-size:10px;font-weight:800;display:grid;place-items:center;
+  border:2px solid var(--bg);
+}
+@keyframes pulse{50%{box-shadow:0 0 40px rgba(34,220,255,0.6);transform:scale(1.04)}}
+.chat-window{
+  display:none;width:340px;height:440px;margin-bottom:12px;
+  background:var(--panel-solid);border:1px solid var(--line);border-radius:18px;
+  flex-direction:column;overflow:hidden;box-shadow:0 0 50px rgba(34,220,255,0.2);
+}
+.chat-window.open{display:flex}
+.chat-head{
+  padding:12px 14px;background:linear-gradient(90deg,#0a2040,#1a1040);
+  display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);
+}
+.chat-head b{font-size:13px}
+.chat-head small{font-size:10px;color:var(--muted)}
+.chat-close{margin-left:auto;background:none;color:#fff;font-size:20px}
+.messages{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:85%;padding:9px 12px;border-radius:12px;font-size:12px;line-height:1.45}
+.msg.bot{background:#0c1f3d;border:1px solid var(--line);align-self:flex-start}
+.msg.user{background:linear-gradient(135deg,var(--blue),var(--purple));align-self:flex-end}
+.quick-replies{display:flex;flex-wrap:wrap;gap:5px;padding:8px 10px}
+.quick-replies button{
+  padding:5px 9px;border-radius:99px;font-size:10px;
+  background:#0c1f3d;border:1px solid var(--line);color:var(--cyan);
+}
+.chat-input{display:flex;padding:10px;gap:8px;border-top:1px solid var(--line)}
+.chat-input input{flex:1;padding:9px 12px;border-radius:10px;background:#06142c;border:1px solid var(--line);color:#fff}
+.chat-input button{width:38px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#031018;font-weight:700}
+
+/* Modal */
+.modal{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{
+  width:min(720px,96vw);max-height:88vh;overflow:auto;
+  background:var(--panel-solid);border:1px solid var(--line);border-radius:20px;
+  box-shadow:0 0 60px rgba(34,220,255,0.2);
+}
+.modal-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.modal-head h2{font-size:18px}
+.modal-close{width:34px;height:34px;border-radius:50%;background:#0c1f3d;border:1px solid var(--line);color:#fff;font-size:18px}
+.modal-body{padding:18px}
+.file-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.file-card{padding:16px;border-radius:14px;border:1px solid var(--line);background:#08142c}
+.file-card h3{font-size:14px;margin-bottom:6px}
+.file-card p{font-size:12px;color:var(--muted);margin-bottom:12px}
+
+/* Game Modal */
+.game-modal-body{padding:20px}
+.quiz-q{font-size:15px;font-weight:600;margin-bottom:16px;line-height:1.5}
+.quiz-opts{display:grid;gap:8px}
+.quiz-opt{
+  padding:12px 14px;border-radius:12px;border:1px solid var(--line);
+  background:#08142c;text-align:left;font-size:13px;transition:.2s;color:#c5d8f0;
+}
+.quiz-opt:hover{border-color:var(--cyan);background:rgba(34,220,255,0.08)}
+.quiz-opt.correct{border-color:var(--green);background:rgba(34,197,94,0.15)}
+.quiz-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,0.12)}
+.quiz-feedback{margin-top:14px;padding:10px;border-radius:10px;font-size:13px;display:none}
+.quiz-feedback.show{display:block}
+.quiz-feedback.ok{background:rgba(34,197,94,0.15);color:var(--green)}
+.quiz-feedback.bad{background:rgba(239,68,68,0.12);color:#f87171}
+.quiz-nav{display:flex;justify-content:space-between;margin-top:16px;align-items:center}
+.quiz-score-display{font-size:13px;color:var(--muted)}
+
+/* Toast */
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);
+  background:#0a1e3b;border:1px solid var(--cyan);color:#fff;padding:11px 18px;
+  border-radius:12px;font-size:13px;opacity:0;transition:.3s;z-index:500;pointer-events:none;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Responsive */
+@media(max-width:1100px){
+  .dash-grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:800px){
+  .layout{display:block}
+  .sidebar{position:relative;width:100%;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .main{margin-left:0;padding:16px}
+  .dash-grid,.skills-grid,.units-grid,.file-list,.stats{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .chat-window{width:min(340px,calc(100vw - 24px))}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">◈</div>
+      <div>Portafolio <span style="color:var(--cyan)">Académico</span></div>
+    </div>
+
+    <div class="profile">
+      <div class="avatar"><img src="assets/profile-david.png" alt="David Martínez" onerror="this.style.display='none'"></div>
+      <h3>David Martínez</h3>
+      <small>Ingeniería de Sistemas</small>
+      <div class="badge-level">⚡ Estudiante Avanzado</div>
+    </div>
+
+    <div class="progress-side">
+      <div class="label"><span>Progreso General</span><span id="sidePct">0%</span></div>
+      <div class="bar-bg"><div class="bar-fill" id="sideBar" style="width:0%"></div></div>
+    </div>
+
+    <nav class="side-nav">
+      <a href="#inicio" class="active" onclick="setActive(this)"><span class="nav-icon">⌂</span> Dashboard</a>
+      <a href="#curso" onclick="setActive(this)"><span class="nav-icon">▣</span> Mi Curso</a>
+      <a href="#proyectos" onclick="setActive(this)"><span class="nav-icon">▱</span> Proyectos</a>
+      <a href="#habilidades" onclick="setActive(this)"><span class="nav-icon">◈</span> Habilidades</a>
+      <button onclick="openGame()"><span class="nav-icon">🎮</span> Mini Juego <span class="nuevo-tag">NUEVO</span></button>
+      <a href="#contacto" onclick="setActive(this)"><span class="nav-icon">✉</span> Contacto</a>
+    </nav>
+
+    <div class="unit-progress">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:600">PROGRESO POR UNIDAD</div>
+      <div id="unitBars"></div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main" id="inicio">
+    <div class="top-header">
+      <h1>Bienvenido, David Martínez</h1>
+      <div class="top-actions">
+        <button class="icon-btn" onclick="toggleTheme()" title="Cambiar tema">☾</button>
+        <button class="icon-btn" onclick="document.getElementById('searchInput')?.focus()" title="Buscar">🔍</button>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero-card">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hello">👋 ¡Hola, soy!</div>
+          <h2>David <span>Martínez</span></h2>
+          <p>Estudiante de Ingeniería de Sistemas. Este es mi portafolio académico donde presento actividades, evidencias y aprendizajes de cada semana. ¡Explora y juega para reforzar lo aprendido!</p>
+          <div class="hero-btns">
+            <button class="btn btn-primary" onclick="document.getElementById('curso').scrollIntoView({behavior:'smooth'})">▶ Ver mi curso</button>
+            <button class="btn btn-outline" onclick="downloadCV()">⇩ Descargar CV</button>
+            <button class="btn btn-outline" onclick="openGame()">🎮 Jugar ahora</button>
+          </div>
+        </div>
+        <div class="hero-visual">🧊</div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-card"><div class="stat-icon">📁</div><div><b id="statUnits">4</b><span>Unidades</span></div></div>
+      <div class="stat-card"><div class="stat-icon">📅</div><div><b>16</b><span>Semanas</span></div></div>
+      <div class="stat-card"><div class="stat-icon">📝</div><div><b id="statActs">31</b><span>Actividades</span></div></div>
+      <div class="stat-card"><div class="stat-icon">📈</div><div><b id="progressStat">0%</b><span>Progreso</span></div></div>
+    </div>
+
+    <!-- DASHBOARD 3 COLS -->
+    <div class="dash-grid" id="curso">
+      <!-- Actividades recientes -->
+      <div class="panel">
+        <div class="panel-head"><h3>📋 Actividades Recientes</h3><a class="link" onclick="openAllWeeks()">Ver todas →</a></div>
+        <div class="panel-body" id="latest"></div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="panel">
+        <div class="panel-head"><h3>⏱ Timeline de 16 Semanas</h3></div>
+        <div class="panel-body">
+          <div class="timeline" id="timeline"></div>
+          <div class="tl-legend">
+            <span><i style="background:var(--cyan)"></i> Completada</span>
+            <span><i style="background:var(--orange)"></i> Actual</span>
+            <span><i style="background:#334155"></i> Pendiente</span>
+          </div>
+          <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:10px" id="tlStatus">Semana actual: —</p>
+        </div>
+      </div>
+
+      <!-- Mini Juego -->
+      <div class="panel">
+        <div class="panel-head"><h3>🎮 Mini-Juego de Aprendizaje</h3><span class="nuevo-tag">NUEVO</span></div>
+        <div class="panel-body game-panel">
+          <div class="game-card" onclick="startQuiz('sql')">
+            <h4>🧠 Quiz SQL</h4>
+            <p>Pon a prueba tus conocimientos de consultas, esquemas e indexación.</p>
+            <div class="game-btns"><span class="game-btn">Jugar Quiz</span></div>
+          </div>
+          <div class="game-card" onclick="startQuiz('code')">
+            <h4>💻 Reto de Código</h4>
+            <p>Elige la consulta correcta y gana XP.</p>
+            <div class="game-btns"><span class="game-btn">Reto de Código</span></div>
+          </div>
+          <div class="game-card" onclick="startQuiz('memory')">
+            <h4>🃏 Memoria de Conceptos</h4>
+            <p>Empareja términos de bases de datos y Azure SQL.</p>
+            <div class="game-btns"><span class="game-btn">Jugar Memoria</span></div>
+          </div>
+          <div class="game-score">🏆 Puntuación: <b id="totalXP">0</b> XP &nbsp; <span class="hearts" id="hearts">❤️❤️❤️</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills + Logros -->
+    <div class="skills-grid" id="habilidades">
+      <div class="panel">
+        <div class="panel-head"><h3>◈ Mapa de Habilidades</h3></div>
+        <div class="panel-body">
+          <div class="skill-bar"><div class="s-head"><span>Programación</span><span>70%</span></div><div class="bar-bg"><div class="s-fill" style="width:70%"></div></div></div>
+          <div class="skill-bar"><div class="s-head"><span>Bases de Datos / SQL</span><span>85%</span></div><div class="bar-bg"><div class="s-fill" style="width:85%"></div></div></div>
+          <div class="skill-bar"><div class="s-head"><span>Azure SQL</span><span>65%</span></div><div class="bar-bg"><div class="s-fill" style="width:65%"></div></div></div>
+          <div class="skill-bar"><div class="s-head"><span>Modelado de Datos</span><span>78%</span></div><div class="bar-bg"><div class="s-fill" style="width:78%"></div></div></div>
+          <div class="skill-bar"><div class="s-head"><span>HTML / Front</span><span>60%</span></div><div class="bar-bg"><div class="s-fill" style="width:60%"></div></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>🏅 Logros Recientes</h3></div>
+        <div class="panel-body achievements">
+          <div class="ach-item"><div class="ach-icon" style="background:rgba(34,220,255,0.2)">🛡️</div><div><b>SQL Maestro</b><span>Completaste quizzes de SQL</span></div></div>
+          <div class="ach-item"><div class="ach-icon" style="background:rgba(168,85,247,0.2)">⭐</div><div><b>Constante</b><span>7 semanas de racha</span></div></div>
+          <div class="ach-item"><div class="ach-icon" style="background:rgba(245,158,11,0.2)">🔥</div><div><b>Desarrollador en Ascenso</b><span>+120 XP esta semana</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unidades -->
+    <section class="units-section" id="proyectos">
+      <div class="panel">
+        <div class="panel-head"><h3>▣ Unidades del Curso</h3></div>
+        <div class="panel-body">
+          <div class="units-grid" id="unitsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto simple -->
+    <section id="contacto" style="margin-top:20px">
+      <div class="panel">
+        <div class="panel-head"><h3>✉ Contacto</h3></div>
+        <div class="panel-body" style="text-align:center;padding:28px">
+          <p style="color:var(--muted);margin-bottom:12px">¿Quieres ver más de mi trabajo o contactarme?</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://github.com/dm3986012" target="_blank">GitHub</a>
+            <button class="btn btn-outline" onclick="downloadCV()">Descargar CV</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-head">
+      <div style="font-size:24px">🤖</div>
+      <div><b>Asistente del Portafolio</b><small>Siempre listo para ayudarte</small></div>
+      <button class="chat-close" onclick="toggleChat()">×</button>
+    </div>
+    <div class="messages" id="messages">
+      <div class="msg bot">¡Hola David! 👋 ¿En qué puedo ayudarte hoy? Puedo mostrarte semanas, explicar unidades o invitarte al mini-juego.</div>
+    </div>
+    <div class="quick-replies">
+      <button onclick="botReply('progreso')">Mi progreso</button>
+      <button onclick="botReply('juego')">Mini-juego</button>
+      <button onclick="botReply('semana 5')">Semana 5</button>
+      <button onclick="botReply('unidades')">Unidades</button>
+    </div>
+    <div class="chat-input">
+      <input id="chatInput" placeholder="Escribe un mensaje..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button onclick="sendChat()">➤</button>
+    </div>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()">🤖<span class="notif">1</span></button>
+</div>
+
+<!-- Week Modal -->
+<div class="modal" id="weekModal">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="modalTitle">Semana</h2><button class="modal-close" onclick="closeModal()">×</button></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Game Modal -->
+<div class="modal" id="gameModal">
+  <div class="modal-box" style="max-width:560px">
+    <div class="modal-head"><h2 id="gameTitle">🎮 Mini-Juego</h2><button class="modal-close" onclick="closeGame()">×</button></div>
+    <div class="modal-body game-modal-body" id="gameBody"></div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
-const units=[{num:1,name:'Fundamentos',icon:'📘',weeks:[['Modelamiento Físico y Mecanismo de Integración','Primera práctica'],['Despliegue y Configuración de Motores de Datos (DBMS)','Actividad práctica'],['Arquitectura','Mapa conceptual de conceptos'],['Conceptos de Datos','Actividad única · documentos y evidencia de aprendizaje']]},{num:2,name:'Desarrollo',icon:'⚙️',weeks:[['Manual Azure SQL · Grados y Títulos','Manual ilustrado'],['Arquitectura Física de Almacenamiento','Infografías y SELECT'],['Organización de Esquemas Lógicos e Indexación','Laboratorios y RBAC'],['SQL QUEST · Esquemas e Indexación','Infografías y filegroups']]},{num:3,name:'Aplicación',icon:'🚀',weeks:[['Consultas avanzadas','Práctica'],['Procedimientos','Práctica'],['Triggers y vistas','Práctica'],['Optimización','Práctica']]},{num:4,name:'Proyecto final',icon:'🏆',weeks:[['Análisis','Documento'],['Diseño','Documento'],['Implementación','Documento'],['Presentación','Documento']]}];
-const activities=[];let aid=1;units.forEach(u=>u.weeks.forEach((w,i)=>activities.push({id:aid++,unit:u.num,week:(u.num-1)*4+i+1,title:w[0],second:w[1],path1:`actividades/semana-${String((u.num-1)*4+i+1).padStart(2,'0')}/actividad-1.html`,path2:`actividades/semana-${String((u.num-1)*4+i+1).padStart(2,'0')}/actividad-2.html`})));
-const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[m]));
-function renderLatest(list=activities.slice(0,4)){document.getElementById('latest').innerHTML=list.map((a,i)=>`<article class="activity"><div class="activity-img">${['📄','</>','🗄️','💻'][i%4]}</div><div><span class="tag">Semana ${String(a.week).padStart(2,'0')}</span><h4>${esc(a.title)}</h4><p>${esc(a.second)}</p><div class="chips"><span class="chip">📁 HTML</span><span class="status${isDone(a.week)?' ok':''}">${isDone(a.week)?'● Completada':'● Pendiente'}</span></div></div><button class="open-mini" onclick="openWeek(${a.week})">→</button></article>`).join('')||'<p style="color:var(--muted);padding:20px">No se encontraron actividades.</p>'}
-function renderUnits(){document.getElementById('unitsGrid').innerHTML=units.map(u=>`<div class="unit-big" onclick="this.classList.toggle('open')"><div class="big-icon">${u.icon}</div><h3>Unidad ${u.num} · ${u.name}</h3><p>${u.weeks.length} semanas</p><div class="week-list">${u.weeks.map((w,i)=>`<div class="week" onclick="event.stopPropagation();openWeek(${(u.num-1)*4+i+1})">Semana ${String((u.num-1)*4+i+1).padStart(2,'0')}: ${esc(w[0])}</div>`).join('')}</div></div>`).join('');document.getElementById('miniUnits').innerHTML=units.map((u,i)=>`<div class="unit-card" onclick="openWeek(${(u.num-1)*4+1})"><div class="unit-badge">${u.num}</div><div><b>Unidad ${u.num}</b><small>${u.name} · 0/8</small></div></div>`).join('')}
-function searchActivities(q){q=q.toLowerCase().trim();renderLatest(q?activities.filter(a=>(a.title+' '+a.second).toLowerCase().includes(q)).slice(0,8):latestList())}
-function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
-function quickAsk(q){document.getElementById('chatInput').value=q;sendMessage()}
-function sendMessage(){const input=document.getElementById('chatInput'),q=input.value.trim();if(!q)return;addMsg(q,'user');input.value='';const x=q.toLowerCase();let r='';
-if(/unidad\s*1|fundamentos/.test(x))r='La Unidad 1 (Fundamentos) cubre las semanas 01 a 04: modelamiento, despliegue de motores de datos y primeros conceptos de bases de datos.';
-else if(/unidad\s*2|desarrollo/.test(x))r='La Unidad 2 (Desarrollo) incluye las semanas 05 a 08: Azure SQL, esquemas lógicos, índices, filegroups, memoria y distribución física de archivos.';
-else if(/unidad\s*3|aplicación/.test(x))r='La Unidad 3 (Aplicación) corresponde a las semanas 09 a 12. Aquí se profundiza en consultas avanzadas y prácticas aplicadas.';
-else if(/unidad\s*4|proyecto/.test(x))r='La Unidad 4 es el Proyecto Final (semanas 13 a 16). Es la integración de todo lo aprendido.';
-else if(/semana\s*0?[5-8]|progreso|cuánto|porcentaje/.test(x))r='Actualmente tienes contenido entregado en las semanas 1-3 y 5-8. El progreso se actualiza automáticamente según las evidencias cargadas.';
-else if(/actividad|ver actividad|abrir/.test(x))r='Para ver una actividad: elige la semana en el menú o en “Últimas Actividades” y pulsa el botón → o “Ver actividad”. Los PDFs se muestran dentro de la página.';
-else if(/archivo|subir|cargar|pdf|evidencia/.test(x))r='Los PDFs y evidencias se colocan en la carpeta de cada semana (actividades/semana-XX/). Luego se visualizan embebidos en la página de la actividad.';
-else if(/hola|buenas|hey|saludos/.test(x))r='¡Hola! 👋 Soy el asistente de este portafolio. Puedo ayudarte con el curso, las unidades, SQL, bases de datos o cualquier otra pregunta general. ¿En qué te ayudo?';
-else if(/qué es sql|que es sql|sql server/.test(x))r='SQL (Structured Query Language) es el lenguaje estándar para gestionar bases de datos relacionales. SQL Server es el motor de Microsoft. Aquí trabajamos con esquemas, índices, filegroups y consultas SELECT.';
-else if(/esquema|schema|rbac/.test(x))r='Los esquemas lógicos (Catalogo, Academico, Tramite, Evaluacion, Documento, Seguridad) organizan las tablas por responsabilidad y permiten aplicar permisos por rol (RBAC – mínimo privilegio).';
-else if(/índice|index|clúster|clustered/.test(x))r='Un índice clustered define el orden físico de las filas en la tabla (solo puede haber uno). Los non-clustered son estructuras adicionales para acelerar búsquedas.';
-else if(/filegroup|filegrowth|maxsize/.test(x))r='FILEGROWTH controla cuánto crece un archivo de datos cuando se llena. MAXSIZE pone el límite máximo. Los filegroups permiten repartir tablas en distintos archivos/discos.';
-else if(/select|join|consulta/.test(x))r='SELECT es la instrucción para consultar datos. Puedes filtrar con WHERE, unir tablas con JOIN, agrupar con GROUP BY y ordenar con ORDER BY. En este curso practicamos muchos casos SELECT sobre GradosTitulos.';
-else if(/quién eres|quien eres|qué puedes|que puedes|ayuda/.test(x))r='Soy el asistente de este portafolio académico. Puedo explicarte el contenido del curso, conceptos de bases de datos y SQL, y también responder preguntas generales de cultura, tecnología o estudio. ¡Pregúntame lo que quieras!';
-else if(/gracias|ok|vale|perfecto/.test(x))r='¡De nada! Si necesitas algo más, aquí estoy 😊';
-else {r='Entiendo tu pregunta: “'+q+'”. Como asistente del portafolio puedo ayudarte tanto con el curso (unidades, SQL, esquemas, índices…) como con dudas generales. ¿Puedes darme un poco más de contexto o preguntarme algo más concreto?';}
-setTimeout(()=>addMsg(r,'bot'),280)}
-function addMsg(t,type){const d=document.createElement('div');d.className='msg '+type;d.textContent=t;const m=document.getElementById('messages');m.appendChild(d);m.scrollTop=m.scrollHeight}
-function toggleTheme(){document.body.classList.toggle('light');showToast(document.body.classList.contains('light')?'Modo claro activado':'Modo oscuro activado')}
-function showToast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
-function downloadCV(){const text='David Martínez\nEstudiante de Ingeniería de Sistemas\n\nPortafolio Académico\n4 unidades · 16 semanas · 31 actividades';const blob=new Blob([text],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='CV-David-Martinez.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
-/* Formato: semana:[actividades entregadas]. Ej.: 4:[1] */
+/* ===== DATA ===== */
+const units=[
+  {num:1,name:'Fundamentos',icon:'📘',weeks:[['Modelamiento Físico y Mecanismo de Integración','Primera práctica'],['Despliegue y Configuración de Motores de Datos (DBMS)','Actividad práctica'],['Arquitectura','Mapa conceptual de conceptos'],['Conceptos de Datos','Actividad única · documentos y evidencia']]},
+  {num:2,name:'Desarrollo',icon:'⚙️',weeks:[['Manual Azure SQL · Grados y Títulos','Manual ilustrado'],['Arquitectura Física de Almacenamiento','Infografías y SELECT'],['Organización de Esquemas Lógicos e Indexación','Laboratorios y RBAC'],['SQL QUEST · Esquemas e Indexación','Infografías y filegroups']]},
+  {num:3,name:'Aplicación',icon:'🚀',weeks:[['Consultas avanzadas','Práctica'],['Procedimientos','Práctica'],['Triggers y vistas','Práctica'],['Optimización','Práctica']]},
+  {num:4,name:'Proyecto final',icon:'🏆',weeks:[['Análisis','Documento'],['Diseño','Documento'],['Implementación','Documento'],['Presentación','Documento']]}
+];
+const activities=[];
+let aid=1;
+units.forEach(u=>u.weeks.forEach((w,i)=>{
+  const week=(u.num-1)*4+i+1;
+  activities.push({id:aid++,unit:u.num,week,title:w[0],second:w[1],
+    path1:`actividades/semana-${String(week).padStart(2,'0')}/actividad-1.html`,
+    path2:`actividades/semana-${String(week).padStart(2,'0')}/actividad-2.html`});
+}));
+
 const entregadas={1:[1,2],2:[1,2],3:[1,2],5:[1,2],6:[1,2],7:[1,2],8:[1,2]};
-const isDone=w=>(entregadas[w]||[]).length;
-function updateProgress(){const total=31;let done=0;Object.values(entregadas).forEach(v=>done+=v.length);const pct=Math.round(done/total*100);
- document.getElementById('progressStat').textContent=pct+'%';document.getElementById('progressCircle').textContent=pct+'%';
- document.querySelector('.progress-circle').style.background=`conic-gradient(var(--cyan) 0 ${pct}%,#163b66 0 100%)`;
- document.getElementById('doneCount').textContent=done;document.getElementById('pendingCount').textContent=total-done;
- document.querySelectorAll('.unit-card small').forEach((el,i)=>{let d=0;for(let w=i*4+1;w<=i*4+4;w++)d+=isDone(w);el.textContent=units[i].name+' · '+d+'/'+(i===0?7:8)})}
-function latestList(){const done=activities.filter(a=>isDone(a.week)).sort((a,b)=>b.week-a.week);const pend=activities.filter(a=>!isDone(a.week));return done.concat(pend).slice(0,4)}
-function openWeek(w){const a=activities.find(x=>x.week===w);if(!a)return;document.getElementById('modalTitle').textContent='Semana '+String(w).padStart(2,'0');document.getElementById('modalBody').innerHTML=`<div class="file-list"><div class="file-card"><h3>Actividad 1</h3><p>${esc(a.title)}</p><div class="actions"><a class="btn" href="${a.path1}" target="_blank">Ver actividad</a></div></div><div class="file-card"><h3>Actividad 2</h3><p>${esc(a.second)}</p><div class="actions"><a class="btn" href="${a.path2}" target="_blank">Ver actividad</a></div></div></div>`;document.getElementById('weekModal').classList.add('open')}
+const isDone=w=>(entregadas[w]||[]).length>0;
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[m]));
+
+/* ===== QUIZ DATA (temas de clase) ===== */
+const quizzes={
+  sql:[
+    {q:'¿Qué cláusula se usa para filtrar filas en SQL?',opts:['WHERE','ORDER BY','GROUP BY','HAVING'],ok:0},
+    {q:'¿Cuál es la función de un INDEX en una tabla?',opts:['Eliminar datos','Acelerar búsquedas','Crear usuarios','Hacer backup'],ok:1},
+    {q:'En Azure SQL, ¿qué representa un Filegroup?',opts:['Un usuario','Un grupo de archivos de datos','Una vista','Un trigger'],ok:1},
+    {q:'¿Qué comando crea una nueva tabla?',opts:['INSERT TABLE','CREATE TABLE','MAKE TABLE','NEW TABLE'],ok:1},
+    {q:'¿Para qué sirve PRIMARY KEY?',opts:['Ordenar filas','Identificar de forma única cada registro','Crear índices secundarios','Filtrar nulos'],ok:1}
+  ],
+  code:[
+    {q:'¿Cuál consulta trae usuarios activos ordenados por fecha de registro DESC?',opts:[
+      "SELECT * FROM usuarios WHERE activo=1 ORDER BY registro DESC",
+      "SELECT * FROM usuarios ORDER BY activo",
+      "GET usuarios WHERE activo",
+      "FIND usuarios ACTIVE"
+    ],ok:0},
+    {q:'¿Qué hace SELECT COUNT(*) FROM pedidos?',opts:['Suma los precios','Cuenta el total de filas','Elimina pedidos','Crea un índice'],ok:1},
+    {q:'Para unir dos tablas usamos:',opts:['MERGE','JOIN','CONNECT','LINK'],ok:1}
+  ],
+  memory:[
+    {q:'Empareja: ¿Qué es un SCHEMA en bases de datos?',opts:['Colección lógica de objetos (tablas, vistas...)','Un tipo de índice','Un motor de almacenamiento','Un lenguaje de programación'],ok:0},
+    {q:'¿Qué es RBAC?',opts:['Role-Based Access Control','Random Binary Access Code','Relational Backup and Copy','Remote Base Authentication'],ok:0},
+    {q:'Azure SQL es principalmente:',opts:['Un servicio de base de datos relacional en la nube','Un lenguaje de programación','Un sistema operativo','Un framework front-end'],ok:0}
+  ]
+};
+
+let currentQuiz=[], currentQ=0, score=0, lives=3, totalXP=0, gameMode='sql';
+
+/* ===== RENDER ===== */
+function renderLatest(){
+  const list=activities.filter(a=>isDone(a.week)).sort((a,b)=>b.week-a.week)
+    .concat(activities.filter(a=>!isDone(a.week))).slice(0,5);
+  document.getElementById('latest').innerHTML=list.map(a=>`
+    <div class="act-item" onclick="openWeek(${a.week})">
+      <div class="act-icon">${['📄','💻','🗄️','⚙️','🚀'][a.week%5]}</div>
+      <div class="act-info">
+        <h4>${esc(a.title)}</h4>
+        <p>Semana ${String(a.week).padStart(2,'0')} · Unidad ${a.unit}</p>
+      </div>
+      <span class="act-status ${isDone(a.week)?'ok':'pending'}">${isDone(a.week)?'Completada':'Pendiente'}</span>
+    </div>`).join('')||'<p style="color:var(--muted);padding:12px">Sin actividades</p>';
+}
+
+function renderTimeline(){
+  let html='';
+  for(let w=1;w<=16;w++){
+    const done=isDone(w);
+    const cls=done?'done':(w===9?'current':'');
+    html+=`<div class="tl-dot ${cls}" onclick="openWeek(${w})" title="Semana ${w}">${w}</div>`;
+  }
+  document.getElementById('timeline').innerHTML=html;
+  const doneCount=Object.values(entregadas).filter(v=>v.length).length;
+  document.getElementById('tlStatus').textContent=`Semanas con evidencia: ${doneCount} de 16`;
+}
+
+function renderUnits(){
+  document.getElementById('unitsGrid').innerHTML=units.map(u=>{
+    let done=0;
+    for(let i=0;i<4;i++){if(isDone((u.num-1)*4+i+1))done++}
+    return `<div class="unit-card-big" onclick="this.classList.toggle('open')">
+      <div style="font-size:28px">${u.icon}</div>
+      <h3>Unidad ${u.num} · ${u.name}</h3>
+      <p>${done}/4 semanas con evidencia</p>
+      <div class="week-list">${u.weeks.map((w,i)=>{
+        const week=(u.num-1)*4+i+1;
+        return `<button class="week-btn" onclick="event.stopPropagation();openWeek(${week})">Semana ${String(week).padStart(2,'0')}: ${esc(w[0])}</button>`;
+      }).join('')}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderUnitBars(){
+  document.getElementById('unitBars').innerHTML=units.map(u=>{
+    let done=0;
+    for(let i=0;i<4;i++){if(isDone((u.num-1)*4+i+1))done++}
+    const pct=Math.round(done/4*100);
+    return `<div class="unit-item">
+      <div class="u-head"><span class="u-name">Unidad ${u.num}</span><span class="u-pct">${pct}%</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function updateProgress(){
+  const total=31;
+  let done=0;
+  Object.values(entregadas).forEach(v=>done+=v.length);
+  const pct=Math.round(done/total*100);
+  document.getElementById('progressStat').textContent=pct+'%';
+  document.getElementById('sidePct').textContent=pct+'%';
+  document.getElementById('sideBar').style.width=pct+'%';
+  document.getElementById('totalXP').textContent=totalXP;
+}
+
+/* ===== WEEK MODAL ===== */
+function openWeek(w){
+  const a=activities.find(x=>x.week===w);
+  if(!a)return;
+  document.getElementById('modalTitle').textContent='Semana '+String(w).padStart(2,'0');
+  document.getElementById('modalBody').innerHTML=`
+    <div class="file-list">
+      <div class="file-card">
+        <h3>Actividad 1</h3>
+        <p>${esc(a.title)}</p>
+        <a class="btn btn-primary" href="${a.path1}" target="_blank">Ver actividad →</a>
+      </div>
+      <div class="file-card">
+        <h3>Actividad 2</h3>
+        <p>${esc(a.second)}</p>
+        <a class="btn btn-primary" href="${a.path2}" target="_blank">Ver actividad →</a>
+      </div>
+    </div>`;
+  document.getElementById('weekModal').classList.add('open');
+}
 function closeModal(){document.getElementById('weekModal').classList.remove('open')}
 function openAllWeeks(){document.getElementById('curso').scrollIntoView({behavior:'smooth'})}
-renderLatest(latestList());renderUnits();updateProgress();
-</script></body></html>
+
+/* ===== GAME ===== */
+function openGame(){document.getElementById('gameModal').classList.add('open');document.getElementById('gameTitle').textContent='🎮 Elige un modo';document.getElementById('gameBody').innerHTML=`
+  <p style="color:var(--muted);margin-bottom:16px;font-size:13px">Selecciona un mini-juego para reforzar lo aprendido en clase:</p>
+  <div style="display:grid;gap:10px">
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('sql')">🧠 Quiz SQL</button>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('code')">💻 Reto de Código</button>
+    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('memory')">🃏 Memoria de Conceptos</button>
+  </div>`;}
+function closeGame(){document.getElementById('gameModal').classList.remove('open')}
+
+function startQuiz(mode){
+  gameMode=mode;
+  currentQuiz=[...quizzes[mode]].sort(()=>Math.random()-0.5).slice(0,mode==='code'?3:5);
+  currentQ=0;score=0;lives=3;
+  showQuestion();
+}
+
+function showQuestion(){
+  if(currentQ>=currentQuiz.length||lives<=0){
+    endQuiz();return;
+  }
+  const q=currentQuiz[currentQ];
+  document.getElementById('gameTitle').textContent=`🎮 ${gameMode==='sql'?'Quiz SQL':gameMode==='code'?'Reto de Código':'Memoria'} · Pregunta ${currentQ+1}/${currentQuiz.length}`;
+  document.getElementById('gameBody').innerHTML=`
+    <div class="quiz-q">${esc(q.q)}</div>
+    <div class="quiz-opts" id="quizOpts">
+      ${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${esc(o)}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="quizFb"></div>
+    <div class="quiz-nav">
+      <div class="quiz-score-display">⭐ ${score} pts &nbsp; <span class="hearts">${'❤️'.repeat(lives)}${'🖤'.repeat(3-lives)}</span></div>
+    </div>`;
+}
+
+function answer(idx){
+  const q=currentQuiz[currentQ];
+  const opts=document.querySelectorAll('.quiz-opt');
+  opts.forEach((btn,i)=>{
+    btn.onclick=null;
+    if(i===q.ok)btn.classList.add('correct');
+    if(i===idx&&i!==q.ok)btn.classList.add('wrong');
+  });
+  const fb=document.getElementById('quizFb');
+  if(idx===q.ok){
+    score+=10;totalXP+=15;
+    fb.className='quiz-feedback show ok';
+    fb.textContent='✅ ¡Correcto! +10 pts · +15 XP';
+  }else{
+    lives--;
+    fb.className='quiz-feedback show bad';
+    fb.textContent='❌ Incorrecto. La respuesta era: '+q.opts[q.ok];
+  }
+  document.getElementById('totalXP').textContent=totalXP;
+  setTimeout(()=>{currentQ++;showQuestion()},1200);
+}
+
+function endQuiz(){
+  const msg=lives<=0?'Se acabaron las vidas 😵':'¡Ronda terminada!';
+  document.getElementById('gameBody').innerHTML=`
+    <div style="text-align:center;padding:20px">
+      <div style="font-size:48px;margin-bottom:12px">${score>=20?'🏆':'💪'}</div>
+      <h3 style="margin-bottom:8px">${msg}</h3>
+      <p style="color:var(--muted);margin-bottom:6px">Puntuación: <b>${score}</b> pts</p>
+      <p style="color:var(--cyan);margin-bottom:18px">XP total: <b>${totalXP}</b></p>
+      <button class="btn btn-primary" onclick="openGame()">Jugar de nuevo</button>
+      <button class="btn btn-outline" style="margin-left:8px" onclick="closeGame()">Cerrar</button>
+    </div>`;
+  showToast(score>=20?'¡Excelente trabajo! 🔥':'+XP ganado. ¡Sigue practicando!');
+}
+
+/* ===== CHAT ===== */
+function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
+function sendChat(){
+  const input=document.getElementById('chatInput');
+  const text=input.value.trim();if(!text)return;
+  addMsg(text,'user');input.value='';
+  setTimeout(()=>botReply(text),400);
+}
+function addMsg(text,who){
+  const div=document.createElement('div');
+  div.className='msg '+who;div.textContent=text;
+  document.getElementById('messages').appendChild(div);
+  document.getElementById('messages').scrollTop=9999;
+}
+function botReply(x){
+  x=x.toLowerCase();
+  let r='Puedo ayudarte con el progreso, las unidades, las semanas o el mini-juego. ¡Pregúntame!';
+  if(/progreso|porcentaje|cuánto/.test(x))r='Tu progreso actual se calcula según las evidencias entregadas. Revisa el círculo y las barras de cada unidad.';
+  else if(/juego|quiz|jugar/.test(x)){r='¡Genial! Abre el Mini-Juego desde el menú o el botón 🎮. Hay Quiz SQL, Reto de Código y Memoria de Conceptos.';openGame()}
+  else if(/unidad\s*1|fundamentos/.test(x))r='Unidad 1 (Fundamentos): semanas 1-4. Modelamiento, DBMS y conceptos de datos.';
+  else if(/unidad\s*2|desarrollo/.test(x))r='Unidad 2 (Desarrollo): semanas 5-8. Azure SQL, esquemas, índices y filegroups.';
+  else if(/unidad\s*3|aplicación/.test(x))r='Unidad 3 (Aplicación): semanas 9-12. Consultas avanzadas, procedimientos y optimización.';
+  else if(/unidad\s*4|proyecto/.test(x))r='Unidad 4 es el Proyecto Final (semanas 13-16). Integración de todo lo aprendido.';
+  else if(/semana\s*(\d+)/.test(x)){const n=+x.match(/semana\s*(\d+)/)[1];if(n>=1&&n<=16){r=`Abriendo semana ${n}...`;openWeek(n)}else r='Indica un número de semana entre 1 y 16.'}
+  else if(/hola|buenas|hey/.test(x))r='¡Hola! 👋 ¿Listo para revisar tu portafolio o jugar un rato?';
+  addMsg(r,'bot');
+}
+
+/* ===== UTILS ===== */
+function setActive(el){
+  document.querySelectorAll('.side-nav a').forEach(a=>a.classList.remove('active'));
+  if(el.tagName==='A')el.classList.add('active');
+}
+function toggleTheme(){document.body.classList.toggle('light');showToast(document.body.classList.contains('light')?'Modo claro':'Modo oscuro')}
+function showToast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+function downloadCV(){
+  const text='David Martínez\nEstudiante de Ingeniería de Sistemas\n\nPortafolio Académico\n4 unidades · 16 semanas · 31 actividades';
+  const blob=new Blob([text],{type:'text/plain'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='CV-David-Martinez.txt';a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),500);
+  showToast('CV descargado');
+}
+
+/* INIT */
+renderLatest();
+renderTimeline();
+renderUnits();
+renderUnitBars();
+updateProgress();
+</script>
+</body>
+</html>
