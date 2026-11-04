@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="build" content="2026-11-04-ice-v2">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Portafolio Académico · David Martínez</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +49,6 @@ body::after{
 a{text-decoration:none;color:inherit}
 button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .layout{min-height:100vh}
-
 .sidebar{
   position:fixed;top:0;left:0;bottom:0;width:260px;
   background:rgba(5,12,28,0.92);backdrop-filter:blur(20px);
@@ -104,9 +104,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   font-size:9px;padding:2px 6px;border-radius:6px;margin-left:auto;
   background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;font-weight:700;
 }
-
 .main{margin-left:260px;padding:22px 28px 50px;width:calc(100% - 260px);max-width:none;box-sizing:border-box}
-
 .top-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .top-header h1{font-size:22px;font-weight:800;background:linear-gradient(90deg,#fff,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
 .top-actions{display:flex;gap:10px;align-items:center}
@@ -116,7 +114,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   display:grid;place-items:center;font-size:16px;transition:.2s;
 }
 .icon-btn:hover{border-color:var(--cyan);box-shadow:0 0 16px rgba(34,220,255,0.25)}
-
 .hero-card{
   position:relative;border-radius:22px;padding:28px 32px;margin-bottom:20px;
   background:linear-gradient(135deg,rgba(12,28,55,0.9),rgba(20,15,45,0.85));
@@ -185,7 +182,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 @keyframes iceFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes icePulse{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
 .hero-visual:hover .ice-cube{animation-play-state:paused}
-
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px;width:100%}
 .stat-card{
   background:var(--panel);backdrop-filter:blur(12px);
@@ -202,7 +198,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .stat-card:nth-child(4) .stat-icon{background:linear-gradient(135deg,#22c55e,#22dcff)}
 .stat-card b{font-size:22px;font-weight:800;display:block}
 .stat-card span{font-size:12px;color:var(--muted)}
-
 .dash-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,0.9fr);gap:16px;margin-bottom:18px;width:100%}
 .panel{
   background:var(--panel);backdrop-filter:blur(14px);
@@ -215,7 +210,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .panel-head h3{font-size:15px;font-weight:700}
 .panel-head a,.panel-head .link{font-size:12px;color:var(--cyan);cursor:pointer}
 .panel-body{padding:14px 16px}
-
 .act-item{
   display:flex;align-items:center;gap:12px;padding:11px 10px;
   border-radius:12px;margin-bottom:6px;transition:.2s;cursor:pointer;
@@ -232,7 +226,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .act-status{font-size:10px;padding:3px 8px;border-radius:99px;font-weight:600}
 .act-status.ok{background:rgba(34,197,94,0.15);color:var(--green)}
 .act-status.pending{background:rgba(245,158,11,0.15);color:var(--orange)}
-
 .timeline{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:8px 0}
 .tl-dot{
   width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
@@ -245,7 +238,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .tl-legend{display:flex;gap:14px;justify-content:center;margin-top:10px;font-size:11px;color:var(--muted)}
 .tl-legend span{display:flex;align-items:center;gap:5px}
 .tl-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
-
 .game-panel{display:flex;flex-direction:column;gap:10px}
 .game-card{
   padding:14px;border-radius:14px;border:1px solid var(--line);
@@ -261,7 +253,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 .game-score{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:6px}
 .hearts{color:#ef4444;letter-spacing:2px}
-
 .skills-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:18px;width:100%}
 .skill-bar{margin-bottom:10px}
 .skill-bar .s-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
@@ -274,7 +265,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .ach-icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:18px}
 .ach-item b{font-size:12px;display:block}
 .ach-item span{font-size:10px;color:var(--muted)}
-
 .units-section{margin-top:8px}
 .units-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .unit-card-big{
@@ -293,7 +283,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   text-align:left;transition:.15s;
 }
 .week-btn:hover{border-color:var(--cyan);color:#fff}
-
 .chatbot{position:fixed;right:22px;bottom:22px;z-index:200}
 .chat-btn{
   width:64px;height:64px;border-radius:50%;
@@ -333,7 +322,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .chat-input{display:flex;padding:10px;gap:8px;border-top:1px solid var(--line)}
 .chat-input input{flex:1;padding:9px 12px;border-radius:10px;background:#06142c;border:1px solid var(--line);color:#fff}
 .chat-input button{width:38px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#031018;font-weight:700}
-
 .modal{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
 .modal.open{display:flex}
 .modal-box{
@@ -349,7 +337,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .file-card{padding:16px;border-radius:14px;border:1px solid var(--line);background:#08142c}
 .file-card h3{font-size:14px;margin-bottom:6px}
 .file-card p{font-size:12px;color:var(--muted);margin-bottom:12px}
-
 .game-modal-body{padding:20px}
 .quiz-q{font-size:15px;font-weight:600;margin-bottom:16px;line-height:1.5}
 .quiz-opts{display:grid;gap:8px}
@@ -366,14 +353,12 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .quiz-feedback.bad{background:rgba(239,68,68,0.12);color:#f87171}
 .quiz-nav{display:flex;justify-content:space-between;margin-top:16px;align-items:center}
 .quiz-score-display{font-size:13px;color:var(--muted)}
-
 .toast{
   position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);
   background:#0a1e3b;border:1px solid var(--cyan);color:#fff;padding:11px 18px;
   border-radius:12px;font-size:13px;opacity:0;transition:.3s;z-index:500;pointer-events:none;
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
 @media(max-width:1100px){
   .dash-grid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
@@ -418,7 +403,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       <div id="unitBars"></div>
     </div>
   </aside>
-
   <main class="main" id="inicio">
     <div class="top-header">
       <h1>Bienvenido, David Martínez</h1>
@@ -427,7 +411,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
         <button class="icon-btn" title="Buscar">🔍</button>
       </div>
     </div>
-
     <section class="hero-card">
       <div class="hero-grid">
         <div class="hero-text">
@@ -456,14 +439,12 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
         </div>
       </div>
     </section>
-
     <div class="stats">
       <div class="stat-card"><div class="stat-icon">📁</div><div><b id="statUnits">4</b><span>Unidades</span></div></div>
       <div class="stat-card"><div class="stat-icon">📅</div><div><b>16</b><span>Semanas</span></div></div>
       <div class="stat-card"><div class="stat-icon">📝</div><div><b id="statActs">31</b><span>Actividades</span></div></div>
       <div class="stat-card"><div class="stat-icon">📈</div><div><b id="progressStat">0%</b><span>Progreso</span></div></div>
     </div>
-
     <div class="dash-grid" id="curso">
       <div class="panel">
         <div class="panel-head"><h3>📋 Actividades Recientes</h3><a class="link" onclick="openAllWeeks()">Ver todas →</a></div>
@@ -503,7 +484,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
         </div>
       </div>
     </div>
-
     <div class="skills-grid" id="habilidades">
       <div class="panel">
         <div class="panel-head"><h3>◈ Mapa de Habilidades</h3></div>
@@ -524,14 +504,12 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
         </div>
       </div>
     </div>
-
     <section class="units-section" id="proyectos">
       <div class="panel">
         <div class="panel-head"><h3>▣ Unidades del Curso</h3></div>
         <div class="panel-body"><div class="units-grid" id="unitsGrid"></div></div>
       </div>
     </section>
-
     <section id="contacto" style="margin-top:20px">
       <div class="panel">
         <div class="panel-head"><h3>✉ Contacto</h3></div>
@@ -546,7 +524,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
     </section>
   </main>
 </div>
-
 <div class="chatbot">
   <div class="chat-window" id="chatWindow">
     <div class="chat-head">
@@ -555,7 +532,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       <button class="chat-close" onclick="toggleChat()">×</button>
     </div>
     <div class="messages" id="messages">
-      <div class="msg bot">¡Hola David! 👋 ¿En qué puedo ayudarte hoy? Puedo mostrarte semanas, explicar unidades o invitarte al mini-juego.</div>
+      <div class="msg bot">¡Hola David! 👋 ¿En qué puedo ayudarte hoy?</div>
     </div>
     <div class="quick-replies">
       <button onclick="botReply('progreso')">Mi progreso</button>
@@ -570,23 +547,19 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   </div>
   <button class="chat-btn" onclick="toggleChat()">🤖<span class="notif">1</span></button>
 </div>
-
 <div class="modal" id="weekModal">
   <div class="modal-box">
     <div class="modal-head"><h2 id="modalTitle">Semana</h2><button class="modal-close" onclick="closeModal()">×</button></div>
     <div class="modal-body" id="modalBody"></div>
   </div>
 </div>
-
 <div class="modal" id="gameModal">
   <div class="modal-box" style="max-width:560px">
     <div class="modal-head"><h2 id="gameTitle">🎮 Mini-Juego</h2><button class="modal-close" onclick="closeGame()">×</button></div>
     <div class="modal-body game-modal-body" id="gameBody"></div>
   </div>
 </div>
-
 <div class="toast" id="toast"></div>
-
 <script>
 const units=[
   {num:1,name:'Fundamentos',icon:'📘',weeks:[['Modelamiento Físico y Mecanismo de Integración','Primera práctica'],['Despliegue y Configuración de Motores de Datos (DBMS)','Actividad práctica'],['Arquitectura','Mapa conceptual de conceptos'],['Conceptos de Datos','Actividad única · documentos y evidencia']]},
@@ -602,11 +575,9 @@ units.forEach(u=>u.weeks.forEach((w,i)=>{
     path1:`actividades/semana-${String(week).padStart(2,'0')}/actividad-1.html`,
     path2:`actividades/semana-${String(week).padStart(2,'0')}/actividad-2.html`});
 }));
-
 const entregadas={1:[1,2],2:[1,2],3:[1,2],5:[1,2],6:[1,2],7:[1,2],8:[1,2]};
 const isDone=w=>(entregadas[w]||[]).length>0;
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[m]));
-
 const quizzes={
   sql:[
     {q:'¿Qué cláusula se usa para filtrar filas en SQL?',opts:['WHERE','ORDER BY','GROUP BY','HAVING'],ok:0},
@@ -616,12 +587,7 @@ const quizzes={
     {q:'¿Para qué sirve PRIMARY KEY?',opts:['Ordenar filas','Identificar de forma única cada registro','Crear índices secundarios','Filtrar nulos'],ok:1}
   ],
   code:[
-    {q:'¿Cuál consulta trae usuarios activos ordenados por fecha de registro DESC?',opts:[
-      "SELECT * FROM usuarios WHERE activo=1 ORDER BY registro DESC",
-      "SELECT * FROM usuarios ORDER BY activo",
-      "GET usuarios WHERE activo",
-      "FIND usuarios ACTIVE"
-    ],ok:0},
+    {q:'¿Cuál consulta trae usuarios activos ordenados por fecha de registro DESC?',opts:["SELECT * FROM usuarios WHERE activo=1 ORDER BY registro DESC","SELECT * FROM usuarios ORDER BY activo","GET usuarios WHERE activo","FIND usuarios ACTIVE"],ok:0},
     {q:'¿Qué hace SELECT COUNT(*) FROM pedidos?',opts:['Suma los precios','Cuenta el total de filas','Elimina pedidos','Crea un índice'],ok:1},
     {q:'Para unir dos tablas usamos:',opts:['MERGE','JOIN','CONNECT','LINK'],ok:1}
   ],
@@ -631,21 +597,10 @@ const quizzes={
     {q:'Azure SQL es principalmente:',opts:['Un servicio de base de datos relacional en la nube','Un lenguaje de programación','Un sistema operativo','Un framework front-end'],ok:0}
   ]
 };
-
 let currentQuiz=[], currentQ=0, score=0, lives=3, totalXP=0, gameMode='sql';
-
 function renderLatest(){
-  const list=activities.filter(a=>isDone(a.week)).sort((a,b)=>b.week-a.week)
-    .concat(activities.filter(a=>!isDone(a.week))).slice(0,5);
-  document.getElementById('latest').innerHTML=list.map(a=>`
-    <div class="act-item" onclick="openWeek(${a.week})">
-      <div class="act-icon">${['📄','💻','🗄️','⚙️','🚀'][a.week%5]}</div>
-      <div class="act-info">
-        <h4>${esc(a.title)}</h4>
-        <p>Semana ${String(a.week).padStart(2,'0')} · Unidad ${a.unit}</p>
-      </div>
-      <span class="act-status ${isDone(a.week)?'ok':'pending'}">${isDone(a.week)?'Completada':'Pendiente'}</span>
-    </div>`).join('')||'<p style="color:var(--muted);padding:12px">Sin actividades</p>';
+  const list=activities.filter(a=>isDone(a.week)).sort((a,b)=>b.week-a.week).concat(activities.filter(a=>!isDone(a.week))).slice(0,5);
+  document.getElementById('latest').innerHTML=list.map(a=>`<div class="act-item" onclick="openWeek(${a.week})"><div class="act-icon">${['📄','💻','🗄️','⚙️','🚀'][a.week%5]}</div><div class="act-info"><h4>${esc(a.title)}</h4><p>Semana ${String(a.week).padStart(2,'0')} · Unidad ${a.unit}</p></div><span class="act-status ${isDone(a.week)?'ok':'pending'}">${isDone(a.week)?'Completada':'Pendiente'}</span></div>`).join('')||'<p style="color:var(--muted);padding:12px">Sin actividades</p>';
 }
 function renderTimeline(){
   let html='';
@@ -655,98 +610,58 @@ function renderTimeline(){
     html+=`<div class="tl-dot ${cls}" onclick="openWeek(${w})" title="Semana ${w}">${w}</div>`;
   }
   document.getElementById('timeline').innerHTML=html;
-  const doneCount=Object.values(entregadas).filter(v=>v.length).length;
-  document.getElementById('tlStatus').textContent=`Semanas con evidencia: ${doneCount} de 16`;
+  document.getElementById('tlStatus').textContent=`Semanas con evidencia: ${Object.values(entregadas).filter(v=>v.length).length} de 16`;
 }
 function renderUnits(){
   document.getElementById('unitsGrid').innerHTML=units.map(u=>{
-    let done=0;
-    for(let i=0;i<4;i++){if(isDone((u.num-1)*4+i+1))done++}
-    return `<div class="unit-card-big" onclick="this.classList.toggle('open')">
-      <div style="font-size:28px">${u.icon}</div>
-      <h3>Unidad ${u.num} · ${u.name}</h3>
-      <p>${done}/4 semanas con evidencia</p>
-      <div class="week-list">${u.weeks.map((w,i)=>{
-        const week=(u.num-1)*4+i+1;
-        return `<button class="week-btn" onclick="event.stopPropagation();openWeek(${week})">Semana ${String(week).padStart(2,'0')}: ${esc(w[0])}</button>`;
-      }).join('')}</div>
-    </div>`;
+    let done=0;for(let i=0;i<4;i++){if(isDone((u.num-1)*4+i+1))done++}
+    return `<div class="unit-card-big" onclick="this.classList.toggle('open')"><div style="font-size:28px">${u.icon}</div><h3>Unidad ${u.num} · ${u.name}</h3><p>${done}/4 semanas con evidencia</p><div class="week-list">${u.weeks.map((w,i)=>{const week=(u.num-1)*4+i+1;return `<button class="week-btn" onclick="event.stopPropagation();openWeek(${week})">Semana ${String(week).padStart(2,'0')}: ${esc(w[0])}</button>`;}).join('')}</div></div>`;
   }).join('');
 }
 function renderUnitBars(){
   document.getElementById('unitBars').innerHTML=units.map(u=>{
-    let done=0;
-    for(let i=0;i<4;i++){if(isDone((u.num-1)*4+i+1))done++}
+    let done=0;for(let i=0;i<4;i++){if(isDone((u.num-1)*4+i+1))done++}
     const pct=Math.round(done/4*100);
-    return `<div class="unit-item">
-      <div class="u-head"><span class="u-name">Unidad ${u.num}</span><span class="u-pct">${pct}%</span></div>
-      <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
-    </div>`;
+    return `<div class="unit-item"><div class="u-head"><span class="u-name">Unidad ${u.num}</span><span class="u-pct">${pct}%</span></div><div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div></div>`;
   }).join('');
 }
 function updateProgress(){
-  const total=31;
-  let done=0;
-  Object.values(entregadas).forEach(v=>done+=v.length);
-  const pct=Math.round(done/total*100);
+  let done=0;Object.values(entregadas).forEach(v=>done+=v.length);
+  const pct=Math.round(done/31*100);
   document.getElementById('progressStat').textContent=pct+'%';
   document.getElementById('sidePct').textContent=pct+'%';
   document.getElementById('sideBar').style.width=pct+'%';
   document.getElementById('totalXP').textContent=totalXP;
 }
 function openWeek(w){
-  const a=activities.find(x=>x.week===w);
-  if(!a)return;
+  const a=activities.find(x=>x.week===w);if(!a)return;
   document.getElementById('modalTitle').textContent='Semana '+String(w).padStart(2,'0');
-  document.getElementById('modalBody').innerHTML=`
-    <div class="file-list">
-      <div class="file-card"><h3>Actividad 1</h3><p>${esc(a.title)}</p>
-        <a class="btn btn-primary" href="${a.path1}" target="_blank">Ver actividad →</a></div>
-      <div class="file-card"><h3>Actividad 2</h3><p>${esc(a.second)}</p>
-        <a class="btn btn-primary" href="${a.path2}" target="_blank">Ver actividad →</a></div>
-    </div>`;
+  document.getElementById('modalBody').innerHTML=`<div class="file-list"><div class="file-card"><h3>Actividad 1</h3><p>${esc(a.title)}</p><a class="btn btn-primary" href="${a.path1}" target="_blank">Ver actividad →</a></div><div class="file-card"><h3>Actividad 2</h3><p>${esc(a.second)}</p><a class="btn btn-primary" href="${a.path2}" target="_blank">Ver actividad →</a></div></div>`;
   document.getElementById('weekModal').classList.add('open');
 }
 function closeModal(){document.getElementById('weekModal').classList.remove('open')}
 function openAllWeeks(){document.getElementById('curso').scrollIntoView({behavior:'smooth'})}
-function openGame(){document.getElementById('gameModal').classList.add('open');document.getElementById('gameTitle').textContent='🎮 Elige un modo';document.getElementById('gameBody').innerHTML=`
-  <p style="color:var(--muted);margin-bottom:16px;font-size:13px">Selecciona un mini-juego para reforzar lo aprendido en clase:</p>
-  <div style="display:grid;gap:10px">
-    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('sql')">🧠 Quiz SQL</button>
-    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('code')">💻 Reto de Código</button>
-    <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('memory')">🃏 Memoria de Conceptos</button>
-  </div>`;}
+function openGame(){document.getElementById('gameModal').classList.add('open');document.getElementById('gameTitle').textContent='🎮 Elige un modo';document.getElementById('gameBody').innerHTML=`<p style="color:var(--muted);margin-bottom:16px;font-size:13px">Selecciona un mini-juego:</p><div style="display:grid;gap:10px"><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('sql')">🧠 Quiz SQL</button><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('code')">💻 Reto de Código</button><button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('memory')">🃏 Memoria de Conceptos</button></div>`;}
 function closeGame(){document.getElementById('gameModal').classList.remove('open')}
-function startQuiz(mode){
-  gameMode=mode;
-  currentQuiz=[...quizzes[mode]].sort(()=>Math.random()-0.5).slice(0,mode==='code'?3:5);
-  currentQ=0;score=0;lives=3;
-  showQuestion();
-}
+function startQuiz(mode){gameMode=mode;currentQuiz=[...quizzes[mode]].sort(()=>Math.random()-0.5).slice(0,mode==='code'?3:5);currentQ=0;score=0;lives=3;showQuestion();}
 function showQuestion(){
   if(currentQ>=currentQuiz.length||lives<=0){endQuiz();return;}
   const q=currentQuiz[currentQ];
-  document.getElementById('gameTitle').textContent=`🎮 ${gameMode==='sql'?'Quiz SQL':gameMode==='code'?'Reto de Código':'Memoria'} · Pregunta ${currentQ+1}/${currentQuiz.length}`;
-  document.getElementById('gameBody').innerHTML=`
-    <div class="quiz-q">${esc(q.q)}</div>
-    <div class="quiz-opts">${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${esc(o)}</button>`).join('')}</div>
-    <div class="quiz-feedback" id="quizFb"></div>
-    <div class="quiz-nav"><div class="quiz-score-display">⭐ ${score} pts &nbsp; <span class="hearts">${'❤️'.repeat(lives)}${'🖤'.repeat(3-lives)}</span></div></div>`;
+  document.getElementById('gameTitle').textContent=`🎮 ${gameMode==='sql'?'Quiz SQL':gameMode==='code'?'Reto de Código':'Memoria'} · ${currentQ+1}/${currentQuiz.length}`;
+  document.getElementById('gameBody').innerHTML=`<div class="quiz-q">${esc(q.q)}</div><div class="quiz-opts">${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${esc(o)}</button>`).join('')}</div><div class="quiz-feedback" id="quizFb"></div><div class="quiz-nav"><div class="quiz-score-display">⭐ ${score} pts &nbsp; <span class="hearts">${'❤️'.repeat(lives)}${'🖤'.repeat(3-lives)}</span></div></div>`;
 }
 function answer(idx){
   const q=currentQuiz[currentQ];
-  const opts=document.querySelectorAll('.quiz-opt');
-  opts.forEach((btn,i)=>{btn.onclick=null;if(i===q.ok)btn.classList.add('correct');if(i===idx&&i!==q.ok)btn.classList.add('wrong');});
+  document.querySelectorAll('.quiz-opt').forEach((btn,i)=>{btn.onclick=null;if(i===q.ok)btn.classList.add('correct');if(i===idx&&i!==q.ok)btn.classList.add('wrong');});
   const fb=document.getElementById('quizFb');
   if(idx===q.ok){score+=10;totalXP+=15;fb.className='quiz-feedback show ok';fb.textContent='✅ ¡Correcto! +10 pts · +15 XP';}
-  else{lives--;fb.className='quiz-feedback show bad';fb.textContent='❌ Incorrecto. La respuesta era: '+q.opts[q.ok];}
+  else{lives--;fb.className='quiz-feedback show bad';fb.textContent='❌ Incorrecto. Respuesta: '+q.opts[q.ok];}
   document.getElementById('totalXP').textContent=totalXP;
   setTimeout(()=>{currentQ++;showQuestion()},1200);
 }
 function endQuiz(){
-  const msg=lives<=0?'Se acabaron las vidas 😵':'¡Ronda terminada!';
-  document.getElementById('gameBody').innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:48px;margin-bottom:12px">${score>=20?'🏆':'💪'}</div><h3 style="margin-bottom:8px">${msg}</h3><p style="color:var(--muted);margin-bottom:6px">Puntuación: <b>${score}</b> pts</p><p style="color:var(--cyan);margin-bottom:18px">XP total: <b>${totalXP}</b></p><button class="btn btn-primary" onclick="openGame()">Jugar de nuevo</button><button class="btn btn-outline" style="margin-left:8px" onclick="closeGame()">Cerrar</button></div>`;
-  showToast(score>=20?'¡Excelente trabajo! 🔥':'+XP ganado. ¡Sigue practicando!');
+  document.getElementById('gameBody').innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:48px;margin-bottom:12px">${score>=20?'🏆':'💪'}</div><h3>${lives<=0?'Se acabaron las vidas':'¡Ronda terminada!'}</h3><p style="color:var(--muted)">Puntuación: <b>${score}</b> pts</p><p style="color:var(--cyan);margin-bottom:18px">XP total: <b>${totalXP}</b></p><button class="btn btn-primary" onclick="openGame()">Jugar de nuevo</button><button class="btn btn-outline" style="margin-left:8px" onclick="closeGame()">Cerrar</button></div>`;
+  showToast(score>=20?'¡Excelente trabajo! 🔥':'+XP ganado');
 }
 function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
 function sendChat(){
@@ -763,15 +678,15 @@ function addMsg(text,who){
 }
 function botReply(x){
   x=x.toLowerCase();
-  let r='Puedo ayudarte con el progreso, las unidades, las semanas o el mini-juego. ¡Pregúntame!';
-  if(/progreso|porcentaje|cuánto/.test(x))r='Tu progreso actual se calcula según las evidencias entregadas.';
-  else if(/juego|quiz|jugar/.test(x)){r='¡Genial! Abre el Mini-Juego. Hay Quiz SQL, Reto de Código y Memoria.';openGame()}
+  let r='Puedo ayudarte con progreso, unidades, semanas o el mini-juego.';
+  if(/progreso|porcentaje/.test(x))r='Tu progreso se calcula según las evidencias entregadas.';
+  else if(/juego|quiz|jugar/.test(x)){r='¡Abre el Mini-Juego! Quiz SQL, Reto de Código y Memoria.';openGame()}
   else if(/unidad\s*1|fundamentos/.test(x))r='Unidad 1 (Fundamentos): semanas 1-4.';
-  else if(/unidad\s*2|desarrollo/.test(x))r='Unidad 2 (Desarrollo): semanas 5-8. Azure SQL, esquemas e índices.';
+  else if(/unidad\s*2|desarrollo/.test(x))r='Unidad 2 (Desarrollo): semanas 5-8.';
   else if(/unidad\s*3|aplicación/.test(x))r='Unidad 3 (Aplicación): semanas 9-12.';
   else if(/unidad\s*4|proyecto/.test(x))r='Unidad 4 es el Proyecto Final (semanas 13-16).';
-  else if(/semana\s*(\d+)/.test(x)){const n=+x.match(/semana\s*(\d+)/)[1];if(n>=1&&n<=16){r=`Abriendo semana ${n}...`;openWeek(n)}else r='Indica un número de semana entre 1 y 16.'}
-  else if(/hola|buenas|hey/.test(x))r='¡Hola! 👋 ¿Listo para revisar tu portafolio o jugar?';
+  else if(/semana\s*(\d+)/.test(x)){const n=+x.match(/semana\s*(\d+)/)[1];if(n>=1&&n<=16){r=`Abriendo semana ${n}...`;openWeek(n)}else r='Indica un número entre 1 y 16.';}
+  else if(/hola|buenas/.test(x))r='¡Hola! 👋 ¿Listo para revisar tu portafolio?';
   addMsg(r,'bot');
 }
 function setActive(el){
@@ -781,14 +696,11 @@ function setActive(el){
 function toggleTheme(){document.body.classList.toggle('light');showToast(document.body.classList.contains('light')?'Modo claro':'Modo oscuro')}
 function showToast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
 function downloadCV(){
-  const text='David Martínez\nEstudiante de Ingeniería de Sistemas\n\nPortafolio Académico\n4 unidades · 16 semanas · 31 actividades';
+  const text='David Martínez\nEstudiante de Ingeniería de Sistemas\n\nPortafolio Académico';
   const blob=new Blob([text],{type:'text/plain'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='CV-David-Martinez.txt';a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),500);
   showToast('CV descargado');
 }
-
-/* Interactive ice cube */
 (function(){
   const visual=document.getElementById('iceVisual');
   const scene=document.getElementById('iceScene');
@@ -796,10 +708,7 @@ function downloadCV(){
   if(!visual||!scene||!cube)return;
   let hover=false;
   visual.addEventListener('mouseenter',()=>{hover=true;cube.style.animationPlayState='paused'});
-  visual.addEventListener('mouseleave',()=>{
-    hover=false;cube.style.animationPlayState='running';
-    scene.style.transform='';
-  });
+  visual.addEventListener('mouseleave',()=>{hover=false;cube.style.animationPlayState='running';scene.style.transform='';});
   visual.addEventListener('mousemove',(e)=>{
     if(!hover)return;
     const r=visual.getBoundingClientRect();
@@ -808,19 +717,13 @@ function downloadCV(){
     scene.style.transform=`rotateY(${x*40}deg) rotateX(${-y*30}deg)`;
   });
   visual.addEventListener('click',()=>{
-    cube.style.animation='none';
-    void cube.offsetWidth;
+    cube.style.animation='none';void cube.offsetWidth;
     cube.style.animation='iceSpin 1.2s ease-out';
     setTimeout(()=>{cube.style.animation='iceSpin 12s linear infinite'},1200);
     showToast('❄️ ¡Cristal activado!');
   });
 })();
-
-renderLatest();
-renderTimeline();
-renderUnits();
-renderUnitBars();
-updateProgress();
+renderLatest();renderTimeline();renderUnits();renderUnitBars();updateProgress();
 </script>
 </body>
 </html>
