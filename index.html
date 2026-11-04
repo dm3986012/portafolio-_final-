@@ -47,7 +47,7 @@ body::after{
 }
 a{text-decoration:none;color:inherit}
 button,input{font:inherit;border:none;outline:none;cursor:pointer}
-.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+.layout{min-height:100vh}
 
 /* ===== SIDEBAR ===== */
 .sidebar{
@@ -107,7 +107,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 
 /* ===== MAIN ===== */
-.main{margin-left:260px;padding:22px 28px 50px;max-width:1480px}
+.main{margin-left:260px;padding:22px 28px 50px;width:calc(100% - 260px);max-width:none;box-sizing:border-box}
 
 /* Header */
 .top-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
@@ -125,13 +125,14 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   position:relative;border-radius:22px;padding:28px 32px;margin-bottom:20px;
   background:linear-gradient(135deg,rgba(12,28,55,0.9),rgba(20,15,45,0.85));
   border:1px solid var(--line);overflow:hidden;box-shadow:var(--glow);
+  width:100%;box-sizing:border-box;
 }
 .hero-card::before{
   content:"";position:absolute;right:-40px;top:-40px;width:280px;height:280px;
   background:radial-gradient(circle,rgba(168,85,247,0.25),transparent 70%);
   pointer-events:none;
 }
-.hero-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;position:relative;z-index:1;width:100%}
 .hero-text .hello{font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:6px}
 .hero-text h2{font-size:32px;font-weight:800;line-height:1.15;margin-bottom:8px}
 .hero-text h2 span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -154,7 +155,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 
 /* Stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px;width:100%}
 .stat-card{
   background:var(--panel);backdrop-filter:blur(12px);
   border:1px solid var(--line);border-radius:16px;padding:16px 18px;
@@ -172,7 +173,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .stat-card span{font-size:12px;color:var(--muted)}
 
 /* Dashboard grid */
-.dash-grid{display:grid;grid-template-columns:1.4fr 1fr 0.9fr;gap:16px;margin-bottom:18px}
+.dash-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,0.9fr);gap:16px;margin-bottom:18px;width:100%}
 .panel{
   background:var(--panel);backdrop-filter:blur(14px);
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
@@ -236,7 +237,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .hearts{color:#ef4444;letter-spacing:2px}
 
 /* Skills + Achievements */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.skills-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:18px;width:100%}
 .skill-bar{margin-bottom:10px}
 .skill-bar .s-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
 .skill-bar .s-fill{height:6px;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--purple))}
@@ -358,10 +359,9 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   .dash-grid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
 }
-@media(max-width:800px){
-  .layout{display:block}
+@media(max-width:900px){
   .sidebar{position:relative;width:100%;height:auto;border-right:0;border-bottom:1px solid var(--line)}
-  .main{margin-left:0;padding:16px}
+  .main{margin-left:0;padding:16px;width:100%}
   .dash-grid,.skills-grid,.units-grid,.file-list,.stats{grid-template-columns:1fr}
   .hero-grid{grid-template-columns:1fr}
   .hero-visual{display:none}
@@ -411,7 +411,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       <h1>Bienvenido, David Martínez</h1>
       <div class="top-actions">
         <button class="icon-btn" onclick="toggleTheme()" title="Cambiar tema">☾</button>
-        <button class="icon-btn" onclick="document.getElementById('searchInput')?.focus()" title="Buscar">🔍</button>
+        <button class="icon-btn" title="Buscar">🔍</button>
       </div>
     </div>
 
@@ -442,13 +442,11 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 
     <!-- DASHBOARD 3 COLS -->
     <div class="dash-grid" id="curso">
-      <!-- Actividades recientes -->
       <div class="panel">
         <div class="panel-head"><h3>📋 Actividades Recientes</h3><a class="link" onclick="openAllWeeks()">Ver todas →</a></div>
         <div class="panel-body" id="latest"></div>
       </div>
 
-      <!-- Timeline -->
       <div class="panel">
         <div class="panel-head"><h3>⏱ Timeline de 16 Semanas</h3></div>
         <div class="panel-body">
@@ -462,7 +460,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
         </div>
       </div>
 
-      <!-- Mini Juego -->
       <div class="panel">
         <div class="panel-head"><h3>🎮 Mini-Juego de Aprendizaje</h3><span class="nuevo-tag">NUEVO</span></div>
         <div class="panel-body game-panel">
@@ -486,7 +483,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       </div>
     </div>
 
-    <!-- Skills + Logros -->
     <div class="skills-grid" id="habilidades">
       <div class="panel">
         <div class="panel-head"><h3>◈ Mapa de Habilidades</h3></div>
@@ -508,7 +504,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       </div>
     </div>
 
-    <!-- Unidades -->
     <section class="units-section" id="proyectos">
       <div class="panel">
         <div class="panel-head"><h3>▣ Unidades del Curso</h3></div>
@@ -518,7 +513,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       </div>
     </section>
 
-    <!-- Contacto simple -->
     <section id="contacto" style="margin-top:20px">
       <div class="panel">
         <div class="panel-head"><h3>✉ Contacto</h3></div>
@@ -534,7 +528,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   </main>
 </div>
 
-<!-- Chatbot -->
 <div class="chatbot">
   <div class="chat-window" id="chatWindow">
     <div class="chat-head">
@@ -559,7 +552,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   <button class="chat-btn" onclick="toggleChat()">🤖<span class="notif">1</span></button>
 </div>
 
-<!-- Week Modal -->
 <div class="modal" id="weekModal">
   <div class="modal-box">
     <div class="modal-head"><h2 id="modalTitle">Semana</h2><button class="modal-close" onclick="closeModal()">×</button></div>
@@ -567,7 +559,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   </div>
 </div>
 
-<!-- Game Modal -->
 <div class="modal" id="gameModal">
   <div class="modal-box" style="max-width:560px">
     <div class="modal-head"><h2 id="gameTitle">🎮 Mini-Juego</h2><button class="modal-close" onclick="closeGame()">×</button></div>
@@ -578,7 +569,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 <div class="toast" id="toast"></div>
 
 <script>
-/* ===== DATA ===== */
 const units=[
   {num:1,name:'Fundamentos',icon:'📘',weeks:[['Modelamiento Físico y Mecanismo de Integración','Primera práctica'],['Despliegue y Configuración de Motores de Datos (DBMS)','Actividad práctica'],['Arquitectura','Mapa conceptual de conceptos'],['Conceptos de Datos','Actividad única · documentos y evidencia']]},
   {num:2,name:'Desarrollo',icon:'⚙️',weeks:[['Manual Azure SQL · Grados y Títulos','Manual ilustrado'],['Arquitectura Física de Almacenamiento','Infografías y SELECT'],['Organización de Esquemas Lógicos e Indexación','Laboratorios y RBAC'],['SQL QUEST · Esquemas e Indexación','Infografías y filegroups']]},
@@ -598,7 +588,6 @@ const entregadas={1:[1,2],2:[1,2],3:[1,2],5:[1,2],6:[1,2],7:[1,2],8:[1,2]};
 const isDone=w=>(entregadas[w]||[]).length>0;
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[m]));
 
-/* ===== QUIZ DATA (temas de clase) ===== */
 const quizzes={
   sql:[
     {q:'¿Qué cláusula se usa para filtrar filas en SQL?',opts:['WHERE','ORDER BY','GROUP BY','HAVING'],ok:0},
@@ -626,7 +615,6 @@ const quizzes={
 
 let currentQuiz=[], currentQ=0, score=0, lives=3, totalXP=0, gameMode='sql';
 
-/* ===== RENDER ===== */
 function renderLatest(){
   const list=activities.filter(a=>isDone(a.week)).sort((a,b)=>b.week-a.week)
     .concat(activities.filter(a=>!isDone(a.week))).slice(0,5);
@@ -692,7 +680,6 @@ function updateProgress(){
   document.getElementById('totalXP').textContent=totalXP;
 }
 
-/* ===== WEEK MODAL ===== */
 function openWeek(w){
   const a=activities.find(x=>x.week===w);
   if(!a)return;
@@ -715,7 +702,6 @@ function openWeek(w){
 function closeModal(){document.getElementById('weekModal').classList.remove('open')}
 function openAllWeeks(){document.getElementById('curso').scrollIntoView({behavior:'smooth'})}
 
-/* ===== GAME ===== */
 function openGame(){document.getElementById('gameModal').classList.add('open');document.getElementById('gameTitle').textContent='🎮 Elige un modo';document.getElementById('gameBody').innerHTML=`
   <p style="color:var(--muted);margin-bottom:16px;font-size:13px">Selecciona un mini-juego para reforzar lo aprendido en clase:</p>
   <div style="display:grid;gap:10px">
@@ -785,7 +771,6 @@ function endQuiz(){
   showToast(score>=20?'¡Excelente trabajo! 🔥':'+XP ganado. ¡Sigue practicando!');
 }
 
-/* ===== CHAT ===== */
 function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
 function sendChat(){
   const input=document.getElementById('chatInput');
@@ -813,7 +798,6 @@ function botReply(x){
   addMsg(r,'bot');
 }
 
-/* ===== UTILS ===== */
 function setActive(el){
   document.querySelectorAll('.side-nav a').forEach(a=>a.classList.remove('active'));
   if(el.tagName==='A')el.classList.add('active');
@@ -828,7 +812,6 @@ function downloadCV(){
   showToast('CV descargado');
 }
 
-/* INIT */
 renderLatest();
 renderTimeline();
 renderUnits();
