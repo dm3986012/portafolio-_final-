@@ -49,7 +49,6 @@ a{text-decoration:none;color:inherit}
 button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .layout{min-height:100vh}
 
-/* ===== SIDEBAR ===== */
 .sidebar{
   position:fixed;top:0;left:0;bottom:0;width:260px;
   background:rgba(5,12,28,0.92);backdrop-filter:blur(20px);
@@ -106,10 +105,8 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
   background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;font-weight:700;
 }
 
-/* ===== MAIN ===== */
 .main{margin-left:260px;padding:22px 28px 50px;width:calc(100% - 260px);max-width:none;box-sizing:border-box}
 
-/* Header */
 .top-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
 .top-header h1{font-size:22px;font-weight:800;background:linear-gradient(90deg,#fff,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
 .top-actions{display:flex;gap:10px;align-items:center}
@@ -120,7 +117,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 .icon-btn:hover{border-color:var(--cyan);box-shadow:0 0 16px rgba(34,220,255,0.25)}
 
-/* Welcome / Hero */
 .hero-card{
   position:relative;border-radius:22px;padding:28px 32px;margin-bottom:20px;
   background:linear-gradient(135deg,rgba(12,28,55,0.9),rgba(20,15,45,0.85));
@@ -134,8 +130,9 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;position:relative;z-index:1;width:100%}
 .hero-text .hello{font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:6px}
-.hero-text h2{font-size:32px;font-weight:800;line-height:1.15;margin-bottom:8px}
+.hero-text h2{font-size:36px;font-weight:800;line-height:1.15;margin-bottom:6px}
 .hero-text h2 span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-text .subtitle{font-size:18px;font-weight:600;color:#c5d8f0;margin-bottom:12px}
 .hero-text p{color:var(--muted);font-size:14px;max-width:520px;line-height:1.6;margin-bottom:18px}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
 .btn{
@@ -147,14 +144,48 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .btn-outline{background:transparent;border:1px solid rgba(34,220,255,0.4);color:var(--cyan)}
 .btn-outline:hover{background:rgba(34,220,255,0.1)}
 .hero-visual{
-  width:140px;height:140px;border-radius:24px;
-  background:linear-gradient(145deg,rgba(59,130,246,0.2),rgba(168,85,247,0.25));
-  border:1px solid rgba(168,85,247,0.3);
-  display:grid;place-items:center;font-size:64px;
-  box-shadow:0 0 40px rgba(168,85,247,0.2);
+  width:160px;height:160px;border-radius:24px;
+  background:linear-gradient(145deg,rgba(34,220,255,0.08),rgba(168,85,247,0.15));
+  border:1px solid rgba(34,220,255,0.25);
+  display:grid;place-items:center;
+  box-shadow:0 0 40px rgba(34,220,255,0.15);
+  perspective:600px;cursor:pointer;position:relative;
+  overflow:hidden;
 }
+.ice-scene{
+  width:100px;height:100px;position:relative;
+  transform-style:preserve-3d;
+  animation:iceFloat 4s ease-in-out infinite;
+  transition:transform 0.15s ease-out;
+}
+.ice-cube{
+  width:70px;height:70px;position:absolute;top:15px;left:15px;
+  transform-style:preserve-3d;
+  animation:iceSpin 12s linear infinite;
+}
+.ice-face{
+  position:absolute;width:70px;height:70px;
+  background:linear-gradient(135deg,rgba(180,240,255,0.35),rgba(100,200,255,0.15));
+  border:1px solid rgba(180,240,255,0.5);
+  backdrop-filter:blur(2px);
+  box-shadow:inset 0 0 20px rgba(100,220,255,0.3);
+}
+.ice-face.front{transform:translateZ(35px)}
+.ice-face.back{transform:rotateY(180deg) translateZ(35px)}
+.ice-face.right{transform:rotateY(90deg) translateZ(35px)}
+.ice-face.left{transform:rotateY(-90deg) translateZ(35px)}
+.ice-face.top{transform:rotateX(90deg) translateZ(35px);background:linear-gradient(135deg,rgba(220,250,255,0.5),rgba(150,230,255,0.25))}
+.ice-face.bottom{transform:rotateX(-90deg) translateZ(35px)}
+.ice-glow{
+  position:absolute;inset:-20px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,220,255,0.25),transparent 70%);
+  animation:icePulse 3s ease-in-out infinite;pointer-events:none;
+}
+@keyframes iceSpin{from{transform:rotateX(-20deg) rotateY(0)}to{transform:rotateX(-20deg) rotateY(360deg)}}
+@keyframes iceFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes icePulse{0%,100%{opacity:0.6;transform:scale(1)}50%{opacity:1;transform:scale(1.15)}}
+.hero-visual:hover .ice-cube{animation-play-state:paused}
 
-/* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px;width:100%}
 .stat-card{
   background:var(--panel);backdrop-filter:blur(12px);
@@ -172,7 +203,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .stat-card b{font-size:22px;font-weight:800;display:block}
 .stat-card span{font-size:12px;color:var(--muted)}
 
-/* Dashboard grid */
 .dash-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,0.9fr);gap:16px;margin-bottom:18px;width:100%}
 .panel{
   background:var(--panel);backdrop-filter:blur(14px);
@@ -186,7 +216,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .panel-head a,.panel-head .link{font-size:12px;color:var(--cyan);cursor:pointer}
 .panel-body{padding:14px 16px}
 
-/* Activity list */
 .act-item{
   display:flex;align-items:center;gap:12px;padding:11px 10px;
   border-radius:12px;margin-bottom:6px;transition:.2s;cursor:pointer;
@@ -203,9 +232,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .act-status{font-size:10px;padding:3px 8px;border-radius:99px;font-weight:600}
 .act-status.ok{background:rgba(34,197,94,0.15);color:var(--green)}
 .act-status.pending{background:rgba(245,158,11,0.15);color:var(--orange)}
-.act-status.review{background:rgba(59,130,246,0.15);color:var(--blue)}
 
-/* Timeline */
 .timeline{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:8px 0}
 .tl-dot{
   width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
@@ -219,7 +246,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .tl-legend span{display:flex;align-items:center;gap:5px}
 .tl-legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
 
-/* Mini Game Panel */
 .game-panel{display:flex;flex-direction:column;gap:10px}
 .game-card{
   padding:14px;border-radius:14px;border:1px solid var(--line);
@@ -236,7 +262,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .game-score{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:6px}
 .hearts{color:#ef4444;letter-spacing:2px}
 
-/* Skills + Achievements */
 .skills-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-bottom:18px;width:100%}
 .skill-bar{margin-bottom:10px}
 .skill-bar .s-head{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
@@ -250,7 +275,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .ach-item b{font-size:12px;display:block}
 .ach-item span{font-size:10px;color:var(--muted)}
 
-/* Units section */
 .units-section{margin-top:8px}
 .units-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .unit-card-big{
@@ -270,7 +294,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 .week-btn:hover{border-color:var(--cyan);color:#fff}
 
-/* Chatbot */
 .chatbot{position:fixed;right:22px;bottom:22px;z-index:200}
 .chat-btn{
   width:64px;height:64px;border-radius:50%;
@@ -311,7 +334,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .chat-input input{flex:1;padding:9px 12px;border-radius:10px;background:#06142c;border:1px solid var(--line);color:#fff}
 .chat-input button{width:38px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#031018;font-weight:700}
 
-/* Modal */
 .modal{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
 .modal.open{display:flex}
 .modal-box{
@@ -328,7 +350,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .file-card h3{font-size:14px;margin-bottom:6px}
 .file-card p{font-size:12px;color:var(--muted);margin-bottom:12px}
 
-/* Game Modal */
 .game-modal-body{padding:20px}
 .quiz-q{font-size:15px;font-weight:600;margin-bottom:16px;line-height:1.5}
 .quiz-opts{display:grid;gap:8px}
@@ -346,7 +367,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 .quiz-nav{display:flex;justify-content:space-between;margin-top:16px;align-items:center}
 .quiz-score-display{font-size:13px;color:var(--muted)}
 
-/* Toast */
 .toast{
   position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);
   background:#0a1e3b;border:1px solid var(--cyan);color:#fff;padding:11px 18px;
@@ -354,7 +374,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-/* Responsive */
 @media(max-width:1100px){
   .dash-grid{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
@@ -371,25 +390,21 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
 </head>
 <body>
 <div class="layout">
-  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
       <div class="brand-icon">◈</div>
       <div>Portafolio <span style="color:var(--cyan)">Académico</span></div>
     </div>
-
     <div class="profile">
       <div class="avatar"><img src="assets/profile-david.png" alt="David Martínez" onerror="this.style.display='none'"></div>
       <h3>David Martínez</h3>
       <small>Ingeniería de Sistemas</small>
       <div class="badge-level">⚡ Estudiante Avanzado</div>
     </div>
-
     <div class="progress-side">
       <div class="label"><span>Progreso General</span><span id="sidePct">0%</span></div>
       <div class="bar-bg"><div class="bar-fill" id="sideBar" style="width:0%"></div></div>
     </div>
-
     <nav class="side-nav">
       <a href="#inicio" class="active" onclick="setActive(this)"><span class="nav-icon">⌂</span> Dashboard</a>
       <a href="#curso" onclick="setActive(this)"><span class="nav-icon">▣</span> Mi Curso</a>
@@ -398,14 +413,12 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       <button onclick="openGame()"><span class="nav-icon">🎮</span> Mini Juego <span class="nuevo-tag">NUEVO</span></button>
       <a href="#contacto" onclick="setActive(this)"><span class="nav-icon">✉</span> Contacto</a>
     </nav>
-
     <div class="unit-progress">
       <div style="font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:600">PROGRESO POR UNIDAD</div>
       <div id="unitBars"></div>
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
   <main class="main" id="inicio">
     <div class="top-header">
       <h1>Bienvenido, David Martínez</h1>
@@ -415,24 +428,35 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       </div>
     </div>
 
-    <!-- HERO -->
     <section class="hero-card">
       <div class="hero-grid">
         <div class="hero-text">
           <div class="hello">👋 ¡Hola, soy!</div>
           <h2>David <span>Martínez</span></h2>
-          <p>Estudiante de Ingeniería de Sistemas. Este es mi portafolio académico donde presento actividades, evidencias y aprendizajes de cada semana. ¡Explora y juega para reforzar lo aprendido!</p>
+          <div class="subtitle">Estudiante de Ingeniería de Sistemas</div>
+          <p>Este es mi portafolio académico donde presento actividades, evidencias y aprendizajes de cada semana. ¡Explora y juega para reforzar lo aprendido!</p>
           <div class="hero-btns">
             <button class="btn btn-primary" onclick="document.getElementById('curso').scrollIntoView({behavior:'smooth'})">▶ Ver mi curso</button>
             <button class="btn btn-outline" onclick="downloadCV()">⇩ Descargar CV</button>
             <button class="btn btn-outline" onclick="openGame()">🎮 Jugar ahora</button>
           </div>
         </div>
-        <div class="hero-visual">🧊</div>
+        <div class="hero-visual" id="iceVisual" title="Pasa el mouse para interactuar">
+          <div class="ice-glow"></div>
+          <div class="ice-scene" id="iceScene">
+            <div class="ice-cube" id="iceCube">
+              <div class="ice-face front"></div>
+              <div class="ice-face back"></div>
+              <div class="ice-face right"></div>
+              <div class="ice-face left"></div>
+              <div class="ice-face top"></div>
+              <div class="ice-face bottom"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- STATS -->
     <div class="stats">
       <div class="stat-card"><div class="stat-icon">📁</div><div><b id="statUnits">4</b><span>Unidades</span></div></div>
       <div class="stat-card"><div class="stat-icon">📅</div><div><b>16</b><span>Semanas</span></div></div>
@@ -440,13 +464,11 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
       <div class="stat-card"><div class="stat-icon">📈</div><div><b id="progressStat">0%</b><span>Progreso</span></div></div>
     </div>
 
-    <!-- DASHBOARD 3 COLS -->
     <div class="dash-grid" id="curso">
       <div class="panel">
         <div class="panel-head"><h3>📋 Actividades Recientes</h3><a class="link" onclick="openAllWeeks()">Ver todas →</a></div>
         <div class="panel-body" id="latest"></div>
       </div>
-
       <div class="panel">
         <div class="panel-head"><h3>⏱ Timeline de 16 Semanas</h3></div>
         <div class="panel-body">
@@ -459,7 +481,6 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
           <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:10px" id="tlStatus">Semana actual: —</p>
         </div>
       </div>
-
       <div class="panel">
         <div class="panel-head"><h3>🎮 Mini-Juego de Aprendizaje</h3><span class="nuevo-tag">NUEVO</span></div>
         <div class="panel-body game-panel">
@@ -507,9 +528,7 @@ button,input{font:inherit;border:none;outline:none;cursor:pointer}
     <section class="units-section" id="proyectos">
       <div class="panel">
         <div class="panel-head"><h3>▣ Unidades del Curso</h3></div>
-        <div class="panel-body">
-          <div class="units-grid" id="unitsGrid"></div>
-        </div>
+        <div class="panel-body"><div class="units-grid" id="unitsGrid"></div></div>
       </div>
     </section>
 
@@ -628,7 +647,6 @@ function renderLatest(){
       <span class="act-status ${isDone(a.week)?'ok':'pending'}">${isDone(a.week)?'Completada':'Pendiente'}</span>
     </div>`).join('')||'<p style="color:var(--muted);padding:12px">Sin actividades</p>';
 }
-
 function renderTimeline(){
   let html='';
   for(let w=1;w<=16;w++){
@@ -640,7 +658,6 @@ function renderTimeline(){
   const doneCount=Object.values(entregadas).filter(v=>v.length).length;
   document.getElementById('tlStatus').textContent=`Semanas con evidencia: ${doneCount} de 16`;
 }
-
 function renderUnits(){
   document.getElementById('unitsGrid').innerHTML=units.map(u=>{
     let done=0;
@@ -656,7 +673,6 @@ function renderUnits(){
     </div>`;
   }).join('');
 }
-
 function renderUnitBars(){
   document.getElementById('unitBars').innerHTML=units.map(u=>{
     let done=0;
@@ -668,7 +684,6 @@ function renderUnitBars(){
     </div>`;
   }).join('');
 }
-
 function updateProgress(){
   const total=31;
   let done=0;
@@ -679,29 +694,21 @@ function updateProgress(){
   document.getElementById('sideBar').style.width=pct+'%';
   document.getElementById('totalXP').textContent=totalXP;
 }
-
 function openWeek(w){
   const a=activities.find(x=>x.week===w);
   if(!a)return;
   document.getElementById('modalTitle').textContent='Semana '+String(w).padStart(2,'0');
   document.getElementById('modalBody').innerHTML=`
     <div class="file-list">
-      <div class="file-card">
-        <h3>Actividad 1</h3>
-        <p>${esc(a.title)}</p>
-        <a class="btn btn-primary" href="${a.path1}" target="_blank">Ver actividad →</a>
-      </div>
-      <div class="file-card">
-        <h3>Actividad 2</h3>
-        <p>${esc(a.second)}</p>
-        <a class="btn btn-primary" href="${a.path2}" target="_blank">Ver actividad →</a>
-      </div>
+      <div class="file-card"><h3>Actividad 1</h3><p>${esc(a.title)}</p>
+        <a class="btn btn-primary" href="${a.path1}" target="_blank">Ver actividad →</a></div>
+      <div class="file-card"><h3>Actividad 2</h3><p>${esc(a.second)}</p>
+        <a class="btn btn-primary" href="${a.path2}" target="_blank">Ver actividad →</a></div>
     </div>`;
   document.getElementById('weekModal').classList.add('open');
 }
 function closeModal(){document.getElementById('weekModal').classList.remove('open')}
 function openAllWeeks(){document.getElementById('curso').scrollIntoView({behavior:'smooth'})}
-
 function openGame(){document.getElementById('gameModal').classList.add('open');document.getElementById('gameTitle').textContent='🎮 Elige un modo';document.getElementById('gameBody').innerHTML=`
   <p style="color:var(--muted);margin-bottom:16px;font-size:13px">Selecciona un mini-juego para reforzar lo aprendido en clase:</p>
   <div style="display:grid;gap:10px">
@@ -710,67 +717,37 @@ function openGame(){document.getElementById('gameModal').classList.add('open');d
     <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="startQuiz('memory')">🃏 Memoria de Conceptos</button>
   </div>`;}
 function closeGame(){document.getElementById('gameModal').classList.remove('open')}
-
 function startQuiz(mode){
   gameMode=mode;
   currentQuiz=[...quizzes[mode]].sort(()=>Math.random()-0.5).slice(0,mode==='code'?3:5);
   currentQ=0;score=0;lives=3;
   showQuestion();
 }
-
 function showQuestion(){
-  if(currentQ>=currentQuiz.length||lives<=0){
-    endQuiz();return;
-  }
+  if(currentQ>=currentQuiz.length||lives<=0){endQuiz();return;}
   const q=currentQuiz[currentQ];
   document.getElementById('gameTitle').textContent=`🎮 ${gameMode==='sql'?'Quiz SQL':gameMode==='code'?'Reto de Código':'Memoria'} · Pregunta ${currentQ+1}/${currentQuiz.length}`;
   document.getElementById('gameBody').innerHTML=`
     <div class="quiz-q">${esc(q.q)}</div>
-    <div class="quiz-opts" id="quizOpts">
-      ${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${esc(o)}</button>`).join('')}
-    </div>
+    <div class="quiz-opts">${q.opts.map((o,i)=>`<button class="quiz-opt" onclick="answer(${i})">${esc(o)}</button>`).join('')}</div>
     <div class="quiz-feedback" id="quizFb"></div>
-    <div class="quiz-nav">
-      <div class="quiz-score-display">⭐ ${score} pts &nbsp; <span class="hearts">${'❤️'.repeat(lives)}${'🖤'.repeat(3-lives)}</span></div>
-    </div>`;
+    <div class="quiz-nav"><div class="quiz-score-display">⭐ ${score} pts &nbsp; <span class="hearts">${'❤️'.repeat(lives)}${'🖤'.repeat(3-lives)}</span></div></div>`;
 }
-
 function answer(idx){
   const q=currentQuiz[currentQ];
   const opts=document.querySelectorAll('.quiz-opt');
-  opts.forEach((btn,i)=>{
-    btn.onclick=null;
-    if(i===q.ok)btn.classList.add('correct');
-    if(i===idx&&i!==q.ok)btn.classList.add('wrong');
-  });
+  opts.forEach((btn,i)=>{btn.onclick=null;if(i===q.ok)btn.classList.add('correct');if(i===idx&&i!==q.ok)btn.classList.add('wrong');});
   const fb=document.getElementById('quizFb');
-  if(idx===q.ok){
-    score+=10;totalXP+=15;
-    fb.className='quiz-feedback show ok';
-    fb.textContent='✅ ¡Correcto! +10 pts · +15 XP';
-  }else{
-    lives--;
-    fb.className='quiz-feedback show bad';
-    fb.textContent='❌ Incorrecto. La respuesta era: '+q.opts[q.ok];
-  }
+  if(idx===q.ok){score+=10;totalXP+=15;fb.className='quiz-feedback show ok';fb.textContent='✅ ¡Correcto! +10 pts · +15 XP';}
+  else{lives--;fb.className='quiz-feedback show bad';fb.textContent='❌ Incorrecto. La respuesta era: '+q.opts[q.ok];}
   document.getElementById('totalXP').textContent=totalXP;
   setTimeout(()=>{currentQ++;showQuestion()},1200);
 }
-
 function endQuiz(){
   const msg=lives<=0?'Se acabaron las vidas 😵':'¡Ronda terminada!';
-  document.getElementById('gameBody').innerHTML=`
-    <div style="text-align:center;padding:20px">
-      <div style="font-size:48px;margin-bottom:12px">${score>=20?'🏆':'💪'}</div>
-      <h3 style="margin-bottom:8px">${msg}</h3>
-      <p style="color:var(--muted);margin-bottom:6px">Puntuación: <b>${score}</b> pts</p>
-      <p style="color:var(--cyan);margin-bottom:18px">XP total: <b>${totalXP}</b></p>
-      <button class="btn btn-primary" onclick="openGame()">Jugar de nuevo</button>
-      <button class="btn btn-outline" style="margin-left:8px" onclick="closeGame()">Cerrar</button>
-    </div>`;
+  document.getElementById('gameBody').innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:48px;margin-bottom:12px">${score>=20?'🏆':'💪'}</div><h3 style="margin-bottom:8px">${msg}</h3><p style="color:var(--muted);margin-bottom:6px">Puntuación: <b>${score}</b> pts</p><p style="color:var(--cyan);margin-bottom:18px">XP total: <b>${totalXP}</b></p><button class="btn btn-primary" onclick="openGame()">Jugar de nuevo</button><button class="btn btn-outline" style="margin-left:8px" onclick="closeGame()">Cerrar</button></div>`;
   showToast(score>=20?'¡Excelente trabajo! 🔥':'+XP ganado. ¡Sigue practicando!');
 }
-
 function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
 function sendChat(){
   const input=document.getElementById('chatInput');
@@ -787,17 +764,16 @@ function addMsg(text,who){
 function botReply(x){
   x=x.toLowerCase();
   let r='Puedo ayudarte con el progreso, las unidades, las semanas o el mini-juego. ¡Pregúntame!';
-  if(/progreso|porcentaje|cuánto/.test(x))r='Tu progreso actual se calcula según las evidencias entregadas. Revisa el círculo y las barras de cada unidad.';
-  else if(/juego|quiz|jugar/.test(x)){r='¡Genial! Abre el Mini-Juego desde el menú o el botón 🎮. Hay Quiz SQL, Reto de Código y Memoria de Conceptos.';openGame()}
-  else if(/unidad\s*1|fundamentos/.test(x))r='Unidad 1 (Fundamentos): semanas 1-4. Modelamiento, DBMS y conceptos de datos.';
-  else if(/unidad\s*2|desarrollo/.test(x))r='Unidad 2 (Desarrollo): semanas 5-8. Azure SQL, esquemas, índices y filegroups.';
-  else if(/unidad\s*3|aplicación/.test(x))r='Unidad 3 (Aplicación): semanas 9-12. Consultas avanzadas, procedimientos y optimización.';
-  else if(/unidad\s*4|proyecto/.test(x))r='Unidad 4 es el Proyecto Final (semanas 13-16). Integración de todo lo aprendido.';
+  if(/progreso|porcentaje|cuánto/.test(x))r='Tu progreso actual se calcula según las evidencias entregadas.';
+  else if(/juego|quiz|jugar/.test(x)){r='¡Genial! Abre el Mini-Juego. Hay Quiz SQL, Reto de Código y Memoria.';openGame()}
+  else if(/unidad\s*1|fundamentos/.test(x))r='Unidad 1 (Fundamentos): semanas 1-4.';
+  else if(/unidad\s*2|desarrollo/.test(x))r='Unidad 2 (Desarrollo): semanas 5-8. Azure SQL, esquemas e índices.';
+  else if(/unidad\s*3|aplicación/.test(x))r='Unidad 3 (Aplicación): semanas 9-12.';
+  else if(/unidad\s*4|proyecto/.test(x))r='Unidad 4 es el Proyecto Final (semanas 13-16).';
   else if(/semana\s*(\d+)/.test(x)){const n=+x.match(/semana\s*(\d+)/)[1];if(n>=1&&n<=16){r=`Abriendo semana ${n}...`;openWeek(n)}else r='Indica un número de semana entre 1 y 16.'}
-  else if(/hola|buenas|hey/.test(x))r='¡Hola! 👋 ¿Listo para revisar tu portafolio o jugar un rato?';
+  else if(/hola|buenas|hey/.test(x))r='¡Hola! 👋 ¿Listo para revisar tu portafolio o jugar?';
   addMsg(r,'bot');
 }
-
 function setActive(el){
   document.querySelectorAll('.side-nav a').forEach(a=>a.classList.remove('active'));
   if(el.tagName==='A')el.classList.add('active');
@@ -811,6 +787,34 @@ function downloadCV(){
   setTimeout(()=>URL.revokeObjectURL(a.href),500);
   showToast('CV descargado');
 }
+
+/* Interactive ice cube */
+(function(){
+  const visual=document.getElementById('iceVisual');
+  const scene=document.getElementById('iceScene');
+  const cube=document.getElementById('iceCube');
+  if(!visual||!scene||!cube)return;
+  let hover=false;
+  visual.addEventListener('mouseenter',()=>{hover=true;cube.style.animationPlayState='paused'});
+  visual.addEventListener('mouseleave',()=>{
+    hover=false;cube.style.animationPlayState='running';
+    scene.style.transform='';
+  });
+  visual.addEventListener('mousemove',(e)=>{
+    if(!hover)return;
+    const r=visual.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-0.5;
+    const y=(e.clientY-r.top)/r.height-0.5;
+    scene.style.transform=`rotateY(${x*40}deg) rotateX(${-y*30}deg)`;
+  });
+  visual.addEventListener('click',()=>{
+    cube.style.animation='none';
+    void cube.offsetWidth;
+    cube.style.animation='iceSpin 1.2s ease-out';
+    setTimeout(()=>{cube.style.animation='iceSpin 12s linear infinite'},1200);
+    showToast('❄️ ¡Cristal activado!');
+  });
+})();
 
 renderLatest();
 renderTimeline();
