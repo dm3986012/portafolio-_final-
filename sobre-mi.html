@@ -1,109 +1,59 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="build" content="2026-11-11-academic-mp-v2">
 <title>Sobre mí · David Martínez</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050c1c;--panel:rgba(12,22,45,.78);--line:rgba(34,220,255,.18);--cyan:#22dcff;--purple:#a855f7;--pink:#ec4899;--muted:#8b9cb3;--text:#e8f0ff;--glow:0 0 24px rgba(34,220,255,.25)}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(34,220,255,.12),transparent),radial-gradient(ellipse 60% 40% at 80% 10%,rgba(168,85,247,.1),transparent);line-height:1.55}
-a{color:inherit;text-decoration:none}
-.sidebar{position:fixed;top:0;left:0;bottom:0;width:250px;background:rgba(5,12,28,.94);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:16px;z-index:50}
+:root{--bg:#050b1a;--panel:rgba(10,22,45,.72);--text:#f0f7ff;--muted:#8ba3c7;--cyan:#22dcff;--purple:#a855f7;--line:rgba(34,220,255,.18)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(168,85,247,.15),transparent),radial-gradient(ellipse 60% 40% at 90% 10%,rgba(34,220,255,.1),transparent)}
+a{text-decoration:none;color:inherit}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:260px;background:rgba(5,12,28,.92);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:14px;z-index:50;overflow-y:auto}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
-.brand-icon{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center;font-size:16px;box-shadow:0 0 18px rgba(34,220,255,.35)}
-.profile{text-align:center;padding:6px 0}
-.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,var(--cyan),var(--purple),var(--pink)) border-box;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-.profile h3{font-size:15px;font-weight:700}.profile small{color:var(--muted);font-size:12px}
+.brand-icon{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center}
+.profile{text-align:center}.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,var(--cyan),var(--purple)) border-box;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}.profile h3{font-size:15px}.profile small{color:var(--muted);font-size:12px}
 .badge{display:inline-flex;margin-top:6px;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;background:rgba(34,220,255,.12);color:var(--cyan);border:1px solid rgba(34,220,255,.25)}
 .side-nav{display:flex;flex-direction:column;gap:3px;margin-top:8px}
-.side-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:11px;color:var(--muted);font-size:13.5px;font-weight:500;transition:.2s}
+.side-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;color:var(--muted);font-size:13.5px;font-weight:500}
 .side-nav a:hover,.side-nav a.active{background:linear-gradient(90deg,rgba(34,220,255,.15),rgba(168,85,247,.1));color:#fff}
 .side-nav a.active{color:var(--cyan)}.nav-icon{width:20px;text-align:center}
-.main{margin-left:250px;padding:28px 30px 50px;width:calc(100% - 250px);max-width:860px}
-.page-title{font-size:26px;font-weight:800;margin-bottom:6px}
+.main{margin-left:260px;padding:28px 30px 50px;width:calc(100% - 260px);max-width:900px}
+.page-title{font-size:26px;font-weight:800;margin-bottom:8px}
 .page-title span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.lead{color:var(--muted);font-size:15px;margin-bottom:28px}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:18px}
-.panel h2{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--cyan)}
-.panel p{font-size:14px;color:var(--muted);margin-bottom:8px}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:8px}
-.skill{background:rgba(8,16,35,.7);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:13px;font-weight:600;transition:.2s}
-.skill:hover{border-color:var(--cyan);box-shadow:var(--glow)}
-.skill span{display:block;font-size:20px;margin-bottom:4px}
-.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.tool{padding:6px 12px;border-radius:99px;font-size:12.5px;font-weight:600;background:rgba(34,220,255,.1);color:var(--cyan);border:1px solid rgba(34,220,255,.25)}
-.footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center}
-@media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;border-right:none;border-bottom:1px solid var(--line)}.main{margin-left:0;width:100%;padding:18px 14px 40px}}
+.lead{color:var(--muted);margin-bottom:22px;font-size:14.5px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px}
+.panel h3{font-size:15px;color:var(--cyan);margin-bottom:8px}
+.panel p{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.tag{display:inline-block;font-size:11px;padding:3px 9px;border-radius:99px;background:rgba(34,220,255,.1);color:var(--cyan);margin:2px 4px 2px 0;border:1px solid rgba(34,220,255,.2)}
+@media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;border-right:none;border-bottom:1px solid var(--line)}.main{margin-left:0;width:100%;padding:18px}}
 </style>
-</head>
-<body>
-<div class="sidebar">
-  <div class="brand"><div class="brand-icon">✦</div> David Martínez</div>
+</head><body>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">◈</div><div>Portafolio <span style="color:var(--cyan)">Académico</span></div></div>
   <div class="profile">
     <div class="avatar"><img src="assets/profile-david.png" alt="David" onerror="this.style.display='none'"></div>
-    <h3>David Martínez</h3>
-    <small>Diseñador Gráfico</small>
-    <div class="badge">Disponible</div>
+    <h3>David Martínez</h3><small>Ingeniería de Sistemas</small>
+    <div class="badge">⚡ Estudiante Avanzado</div>
   </div>
   <nav class="side-nav">
-    <a href="index.html"><span class="nav-icon">🏠</span> Inicio</a>
-    <a class="active" href="sobre-mi.html"><span class="nav-icon">👤</span> Sobre mí</a>
-    <a href="proyectos.html"><span class="nav-icon">🎨</span> Proyectos</a>
-    <a href="curso.html"><span class="nav-icon">📚</span> Curso</a>
-    <a href="contacto.html"><span class="nav-icon">📩</span> Contacto</a>
+    <a href="index.html"><span class="nav-icon">⌂</span> Dashboard</a>
+    <a href="curso.html"><span class="nav-icon">▣</span> Mi Curso</a>
+    <a href="proyectos.html"><span class="nav-icon">▱</span> Proyectos</a>
+    <a class="active" href="sobre-mi.html"><span class="nav-icon">◈</span> Sobre mí</a>
+    <a href="index.html"><span class="nav-icon">🎮</span> Mini Juego</a>
+    <a href="contacto.html"><span class="nav-icon">✉</span> Contacto</a>
   </nav>
-</div>
+</aside>
 <main class="main">
-  <h1 class="page-title">Sobre <span>mí</span></h1>
-  <p class="lead">Diseñador gráfico de 21 años, de Perú. Me gusta crear piezas que se vean bien y cumplan su función: comunicar de forma clara y atractiva.</p>
-
-  <div class="panel">
-    <h2>Perfil</h2>
-    <p>Soy un diseñador gráfico joven, creativo y orientado a resultados. Me interesa desarrollar piezas claras, atractivas y funcionales para medios digitales e impresos.</p>
-    <p>Destaco por la atención al detalle, la capacidad de aprender rápido y la disposición para trabajar en equipo. Busco oportunidades donde pueda aportar valor visual y seguir creciendo.</p>
-  </div>
-
-  <div class="panel">
-    <h2>Formación</h2>
-    <p><strong style="color:#e8f0ff">Universidad Peruana Los Andes (UPLA)</strong></p>
-    <p>Formación en Diseño Gráfico orientada a comunicación visual, diseño digital y elaboración de piezas gráficas para distintos medios.</p>
-  </div>
-
-  <div class="panel">
-    <h2>Habilidades</h2>
-    <div class="skills-grid">
-      <div class="skill"><span>🎨</span> Composición visual</div>
-      <div class="skill"><span>🔤</span> Tipografía & color</div>
-      <div class="skill"><span>🖼</span> Retoque de imágenes</div>
-      <div class="skill"><span>💡</span> Conceptos visuales</div>
-      <div class="skill"><span>📱</span> Contenido digital</div>
-      <div class="skill"><span>🤝</span> Trabajo en equipo</div>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h2>Herramientas</h2>
-    <div class="tools">
-      <span class="tool">Adobe Photoshop</span>
-      <span class="tool">Adobe Illustrator</span>
-      <span class="tool">Canva</span>
-      <span class="tool">Microsoft Office</span>
-    </div>
-  </div>
-
-  <div class="panel">
-    <h2>Competencias personales</h2>
-    <p>Creatividad · Responsabilidad · Proactividad · Organización · Aprendizaje continuo · Trabajo en equipo</p>
-  </div>
-
-  <div class="panel">
-    <h2>Idiomas</h2>
-    <p>Español — Nativo &nbsp;·&nbsp; Inglés — Básico / Intermedio</p>
-  </div>
-
-  <div class="footer">© 2026 David Abel Martínez Paredes</div>
+<h1 class="page-title">Sobre <span>mí</span></h1>
+<p class="lead">Estudiante de Ingeniería de Sistemas. Este portafolio reúne actividades, evidencias y aprendizajes del curso.</p>
+<div class="panel"><h3>Perfil</h3><p>Soy David Abel Martínez Paredes. Me interesa el desarrollo, las bases de datos y documentar bien cada entrega.</p></div>
+<div class="panel"><h3>Formación</h3><p><strong style="color:#fff">Ingeniería de Sistemas</strong> — Curso con 16 semanas, unidades prácticas de SQL, modelado y Azure.</p></div>
+<div class="panel"><h3>Habilidades</h3>
+<span class="tag">SQL / Azure SQL</span><span class="tag">Modelado de datos</span><span class="tag">HTML / CSS</span>
+<span class="tag">Documentación</span><span class="tag">Photoshop / Canva</span>
+</div>
 </main>
-</body>
-</html>
+</body></html>
