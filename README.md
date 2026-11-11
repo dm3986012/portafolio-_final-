@@ -1,52 +1,34 @@
-# Portafolio Académico · David Martínez
+# Portafolio · David Martínez
 
-Versión visual futurista y funcional. Abre `index.html` con Google Chrome.
+Portafolio personal multi-página (Diseñador Gráfico).
 
-Las 16 semanas incluyen 32 archivos HTML de plantilla para que **Ver actividad** funcione desde el inicio. Las evidencias están optimizadas en formato WebP dentro de `actividades/semana-XX/img1/` e `img2/`.
+**Sitio:** https://dm3986012.github.io/portafolio-_final-/
 
-## Subir a GitHub
+## Páginas
 
-1. Sube el contenido de esta carpeta al repositorio (el archivo `index.html` debe quedar en la raíz).
-2. No vuelvas a agregar archivos ZIP dentro del repositorio: la carpeta `actividades/` ya contiene todo lo necesario.
-3. Para publicarlo, entra a **Settings → Pages**, selecciona la rama principal y la carpeta `/ (root)`.
+| Página | Archivo |
+|--------|--------|
+| Inicio | `index.html` |
+| Sobre mí | `sobre-mi.html` |
+| Proyectos | `proyectos.html` |
+| Curso académico | `curso.html` |
+| Contacto | `contacto.html` |
 
-Las plantillas también aceptan evidencias nuevas en PNG, JPG o WebP. Para mantener el repositorio liviano, usa WebP para capturas de pantalla.
+## Publicar / actualizar GitHub Pages
 
-## Agregar evidencias a otra semana
+1. Entra a tu repo → **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: **main** / folder: **/ (root)**
+4. Guarda (Save)
+5. Espera 1–2 minutos y recarga con Ctrl+F5
 
-Cada semana tiene dos actividades:
+Si sigue viendo la versión antigua, desactiva Pages, guarda, vuelve a activar con main + root y guarda de nuevo.
 
-- Actividad 1: coloca sus imágenes dentro de `img1/`.
-- Actividad 2: coloca sus imágenes dentro de `img2/`.
+## Contacto
 
-Por ejemplo, para la semana 05:
+- WhatsApp: +51 929 516 873
+- Facebook: davidmartinez paredes
 
-```text
-actividades/
-└── semana-05/
-    ├── actividad-1.html
-    ├── actividad-2.html
-    ├── img1/
-    │   ├── evidencia-1.webp
-    │   └── evidencia-2.webp
-    └── img2/
-        ├── evidencia-1.webp
-        └── evidencia-2.webp
-```
+## Curso académico
 
-Los nombres deben comenzar en `evidencia-1`, continuar en orden y usar una extensión compatible: `.webp`, `.png`, `.jpg` o `.jpeg`. Después de agregar las imágenes, abre la actividad correspondiente y aparecerán automáticamente en la galería.
-
-
-## Marcar actividades entregadas
-
-En `index.html` busca la lista `entregadas` (cerca del final) y agrega la semana y sus actividades. Por ejemplo, al terminar la semana 04:
-
-```js
-const entregadas={1:[1,2],2:[1,2],3:[1,2],4:[1,2]};
-```
-
-El progreso, los contadores por unidad y el estado "Completada" se actualizan solos.
-
-## Semana 03
-
-`actividades/semana-03/` incluye los Word, los PDF y las infografías de la Actividad 1 (Grados y Títulos) y la Actividad 2 (CadenaEditorial y EmpresaMaterialInformatica).
+La carpeta `actividades/` conserva las evidencias de las 16 semanas.
