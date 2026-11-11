@@ -1,157 +1,59 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Curso Académico · David Martínez</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="build" content="2026-11-11-academic-mp-v2">
+<title>Mi Curso · David Martínez</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050c1c;--panel:rgba(12,22,45,.78);--line:rgba(34,220,255,.18);--cyan:#22dcff;--purple:#a855f7;--pink:#ec4899;--muted:#8b9cb3;--text:#e8f0ff;--glow:0 0 24px rgba(34,220,255,.25)}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(34,220,255,.12),transparent),radial-gradient(ellipse 60% 40% at 80% 10%,rgba(168,85,247,.1),transparent);line-height:1.55}
-a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-.sidebar{position:fixed;top:0;left:0;bottom:0;width:250px;background:rgba(5,12,28,.94);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:16px;z-index:50;overflow-y:auto}
+:root{--bg:#050b1a;--panel:rgba(10,22,45,.72);--text:#f0f7ff;--muted:#8ba3c7;--cyan:#22dcff;--purple:#a855f7;--line:rgba(34,220,255,.18)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(168,85,247,.15),transparent),radial-gradient(ellipse 60% 40% at 90% 10%,rgba(34,220,255,.1),transparent)}
+a{text-decoration:none;color:inherit}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:260px;background:rgba(5,12,28,.92);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:14px;z-index:50;overflow-y:auto}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
-.brand-icon{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center;font-size:16px;box-shadow:0 0 18px rgba(34,220,255,.35)}
-.profile{text-align:center;padding:6px 0}
-.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,var(--cyan),var(--purple),var(--pink)) border-box;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-.profile h3{font-size:15px;font-weight:700}.profile small{color:var(--muted);font-size:12px}
+.brand-icon{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center}
+.profile{text-align:center}.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,var(--cyan),var(--purple)) border-box;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}.profile h3{font-size:15px}.profile small{color:var(--muted);font-size:12px}
 .badge{display:inline-flex;margin-top:6px;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;background:rgba(34,220,255,.12);color:var(--cyan);border:1px solid rgba(34,220,255,.25)}
 .side-nav{display:flex;flex-direction:column;gap:3px;margin-top:8px}
-.side-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:11px;color:var(--muted);font-size:13.5px;font-weight:500;transition:.2s}
+.side-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;color:var(--muted);font-size:13.5px;font-weight:500}
 .side-nav a:hover,.side-nav a.active{background:linear-gradient(90deg,rgba(34,220,255,.15),rgba(168,85,247,.1));color:#fff}
 .side-nav a.active{color:var(--cyan)}.nav-icon{width:20px;text-align:center}
-.main{margin-left:250px;padding:28px 30px 50px;width:calc(100% - 250px)}
-.page-title{font-size:26px;font-weight:800;margin-bottom:6px}
-.page-title span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.lead{color:var(--muted);font-size:15px;margin-bottom:22px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
-.stat-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px}
-.stat-icon{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:17px}
-.stat-card:nth-child(1) .stat-icon{background:linear-gradient(135deg,#3b82f6,#22dcff)}
-.stat-card:nth-child(2) .stat-icon{background:linear-gradient(135deg,#8b5cf6,#a855f7)}
-.stat-card:nth-child(3) .stat-icon{background:linear-gradient(135deg,#ec4899,#f472b6)}
-.stat-card:nth-child(4) .stat-icon{background:linear-gradient(135deg,#10b981,#34d399)}
-.stat-card b{display:block;font-size:17px;font-weight:800}.stat-card span{font-size:11px;color:var(--muted)}
-.section-title{font-size:16px;font-weight:800;margin:22px 0 12px;display:flex;align-items:center;gap:8px}
-.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:20px}
-.unit-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.2s}
-.unit-card:hover{border-color:rgba(34,220,255,.4)}
-.unit-card h4{font-size:13.5px;margin-bottom:4px}
-.unit-card p{font-size:12px;color:var(--muted);margin-bottom:8px}
-.bar{height:6px;background:#0d1f3d;border-radius:99px;overflow:hidden}
-.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:99px}
-.timeline{position:relative;padding-left:22px;margin-bottom:20px}
-.timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--purple));opacity:.4}
-.tl-item{position:relative;padding-bottom:14px}
-.tl-item::before{content:'';position:absolute;left:-18px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
-.tl-item.done::before{background:#34d399;box-shadow:0 0 8px #34d399}
-.tl-week{font-size:11px;color:var(--cyan);font-weight:700}
-.tl-title{font-size:13px;font-weight:500;margin:2px 0}
-.tl-desc{font-size:12px;color:var(--muted)}
-.act-list{display:flex;flex-direction:column;gap:8px}
-.act-item{display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(8,16,35,.6);border-radius:12px;border:1px solid transparent;transition:.2s}
-.act-item:hover{border-color:rgba(34,220,255,.3);background:rgba(34,220,255,.06)}
-.act-item .week{font-size:11px;color:var(--cyan);font-weight:700;min-width:42px}
-.act-item .title{flex:1;font-size:13px;font-weight:500}
-.act-item .status{font-size:11px;padding:3px 8px;border-radius:99px;font-weight:600}
-.act-item .status.done{background:rgba(16,185,129,.15);color:#34d399}
-.act-item .status.pending{background:rgba(251,191,36,.12);color:#fbbf24}
-.note{margin-top:18px;padding:14px 16px;background:rgba(34,220,255,.06);border:1px solid rgba(34,220,255,.2);border-radius:12px;font-size:13px;color:var(--muted)}
-.footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center}
-@media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;border-right:none;border-bottom:1px solid var(--line)}.main{margin-left:0;width:100%;padding:18px 14px 40px}.stats{grid-template-columns:repeat(2,1fr)}}
+.main{margin-left:260px;padding:28px 30px 50px;width:calc(100% - 260px);max-width:900px}
+.page-title{font-size:26px;font-weight:800;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:22px;font-size:14.5px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px}
+.panel h3{font-size:15px;color:var(--cyan);margin-bottom:8px}
+.panel p{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+@media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;border-right:none;border-bottom:1px solid var(--line)}.main{margin-left:0;width:100%;padding:18px}}
 </style>
-</head>
-<body>
-<div class="sidebar">
-  <div class="brand"><div class="brand-icon">✦</div> David Martínez</div>
+</head><body>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">◈</div><div>Portafolio <span style="color:var(--cyan)">Académico</span></div></div>
   <div class="profile">
     <div class="avatar"><img src="assets/profile-david.png" alt="David" onerror="this.style.display='none'"></div>
-    <h3>David Martínez</h3>
-    <small>Diseñador Gráfico</small>
-    <div class="badge">Disponible</div>
+    <h3>David Martínez</h3><small>Ingeniería de Sistemas</small>
+    <div class="badge">⚡ Estudiante Avanzado</div>
   </div>
   <nav class="side-nav">
-    <a href="index.html"><span class="nav-icon">🏠</span> Inicio</a>
-    <a href="sobre-mi.html"><span class="nav-icon">👤</span> Sobre mí</a>
-    <a href="proyectos.html"><span class="nav-icon">🎨</span> Proyectos</a>
-    <a class="active" href="curso.html"><span class="nav-icon">📚</span> Curso</a>
-    <a href="contacto.html"><span class="nav-icon">📩</span> Contacto</a>
+    <a href="index.html"><span class="nav-icon">⌂</span> Dashboard</a>
+    <a class="active" href="curso.html"><span class="nav-icon">▣</span> Mi Curso</a>
+    <a href="proyectos.html"><span class="nav-icon">▱</span> Proyectos</a>
+    <a href="sobre-mi.html"><span class="nav-icon">◈</span> Sobre mí</a>
+    <a href="index.html"><span class="nav-icon">🎮</span> Mini Juego</a>
+    <a href="contacto.html"><span class="nav-icon">✉</span> Contacto</a>
   </nav>
-</div>
+</aside>
 <main class="main">
-  <h1 class="page-title">Curso <span>académico</span></h1>
-  <p class="lead">Seguimiento de actividades, evidencias y progreso del curso (16 semanas). Aquí se concentran las entregas y el avance por unidades.</p>
-
-  <div class="stats">
-    <div class="stat-card"><div class="stat-icon">📁</div><div><b>4</b><span>Unidades</span></div></div>
-    <div class="stat-card"><div class="stat-icon">📅</div><div><b>16</b><span>Semanas</span></div></div>
-    <div class="stat-card"><div class="stat-icon">📝</div><div><b>32</b><span>Actividades</span></div></div>
-    <div class="stat-card"><div class="stat-icon">📈</div><div><b id="pct">25%</b><span>Progreso</span></div></div>
-  </div>
-
-  <h2 class="section-title">🎯 Unidades</h2>
-  <div class="units">
-    <div class="unit-card">
-      <h4>Unidad 1</h4>
-      <p>Fundamentos y primeros entregables</p>
-      <div class="bar"><span style="width:100%"></span></div>
-    </div>
-    <div class="unit-card">
-      <h4>Unidad 2</h4>
-      <p>Modelado y datos</p>
-      <div class="bar"><span style="width:50%"></span></div>
-    </div>
-    <div class="unit-card">
-      <h4>Unidad 3</h4>
-      <p>Implementación y herramientas</p>
-      <div class="bar"><span style="width:0%"></span></div>
-    </div>
-    <div class="unit-card">
-      <h4>Unidad 4</h4>
-      <p>Proyecto final e integración</p>
-      <div class="bar"><span style="width:0%"></span></div>
-    </div>
-  </div>
-
-  <h2 class="section-title">📅 Timeline 16 semanas</h2>
-  <div class="timeline" id="timeline"></div>
-
-  <h2 class="section-title">📋 Actividades recientes</h2>
-  <div class="act-list" id="acts"></div>
-
-  <div class="note">
-    Las evidencias y archivos de cada actividad están en la carpeta <strong style="color:var(--cyan)">actividades/semana-XX/</strong> del repositorio. Marca las entregadas en el código para actualizar el progreso automáticamente.
-  </div>
-
-  <div class="footer">© 2026 David Abel Martínez Paredes · Portafolio académico</div>
+<h1 class="page-title">Mi Curso</h1>
+<p class="lead">Seguimiento de las 16 semanas y el avance por unidades.</p>
+<div class="panel"><h3>Resumen</h3><p>4 Unidades · 16 Semanas · 31 Actividades · Progreso ≈ 45%</p><p>Evidencias en <strong style="color:var(--cyan)">actividades/semana-XX/</strong></p></div>
+<div class="panel"><h3>Unidades</h3>
+<p>Unidad 1 — Fundamentos (75%)</p>
+<p>Unidad 2 — Modelado y datos (100%)</p>
+<p>Unidad 3 — Implementación (0%)</p>
+<p>Unidad 4 — Proyecto final (0%)</p>
+</div>
+<div class="panel"><h3>Dashboard completo</h3><p>El timeline, mini-juego y actividades recientes están en el <a href="index.html" style="color:var(--cyan)">Dashboard principal</a>.</p></div>
 </main>
-<script>
-const entregadas = {1:[1,2],2:[1,2],3:[1,2],4:[1,2]};
-const weeks = Array.from({length:16},(_,i)=>({
-  n:i+1,
-  title: `Semana ${i+1}`,
-  desc: i<4 ? 'Actividades entregadas' : 'Pendiente'
-}));
-const tl = document.getElementById('timeline');
-weeks.forEach(w=>{
-  const done = entregadas[w.n] && entregadas[w.n].length>=2;
-  const el = document.createElement('div');
-  el.className = 'tl-item'+(done?' done':'');
-  el.innerHTML = `<div class="tl-week">Semana ${w.n}</div><div class="tl-title">${w.title}</div><div class="tl-desc">${w.desc}</div>`;
-  tl.appendChild(el);
-});
-const acts = document.getElementById('acts');
-[1,2,3,4].forEach(s=>{
-  [1,2].forEach(a=>{
-    const el = document.createElement('div');
-    el.className = 'act-item';
-    el.innerHTML = `<span class="week">S${String(s).padStart(2,'0')}</span><span class="title">Actividad ${a}</span><span class="status done">Completada</span>`;
-    acts.appendChild(el);
-  });
-});
-const total = 32, done = Object.values(entregadas).flat().length;
-document.getElementById('pct').textContent = Math.round(done/total*100)+'%';
-</script>
-</body>
-</html>
+</body></html>
