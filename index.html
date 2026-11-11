@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="2026-11-11-academic-mp-v2">
+<meta name="build" content="2026-11-11-single-page-v1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Portafolio Académico · David Martínez</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -102,12 +102,12 @@ a{text-decoration:none;color:inherit}button{font:inherit;border:none;outline:non
     <div class="bar-bg"><div class="bar-fill" id="sideBar" style="width:45%"></div></div>
   </div>
   <nav class="side-nav">
-    <a class="active" href="index.html"><span class="nav-icon">⌂</span> Dashboard</a>
-    <a href="curso.html"><span class="nav-icon">▣</span> Mi Curso</a>
-    <a href="proyectos.html"><span class="nav-icon">▱</span> Proyectos</a>
-    <a href="sobre-mi.html"><span class="nav-icon">◈</span> Sobre mí</a>
+    <a class="active" href="#inicio"><span class="nav-icon">⌂</span> Dashboard</a>
+    <a href="#curso"><span class="nav-icon">▣</span> Mi Curso</a>
+    <a href="#proyectos"><span class="nav-icon">▱</span> Proyectos</a>
+    <a href="#habilidades"><span class="nav-icon">◈</span> Habilidades</a>
     <button onclick="openGame()"><span class="nav-icon">🎮</span> Mini Juego <span class="nuevo-tag">NUEVO</span></button>
-    <a href="contacto.html"><span class="nav-icon">✉</span> Contacto</a>
+    <a href="#contacto"><span class="nav-icon">✉</span> Contacto</a>
   </nav>
   <div class="unit-progress">
     <div style="color:var(--muted);font-weight:600;margin-bottom:8px">PROGRESO POR UNIDAD</div>
@@ -117,7 +117,7 @@ a{text-decoration:none;color:inherit}button{font:inherit;border:none;outline:non
     <div class="unit-item"><div class="u-head"><span>Unidad 4</span><span>0%</span></div><div class="bar-bg"><div class="bar-fill" style="width:0%"></div></div></div>
   </div>
 </aside>
-<main class="main">
+<main class="main" id="inicio">
   <div class="top-header"><h1>Bienvenido, David Martínez</h1></div>
   <section class="hero-card">
     <div class="hero-grid">
@@ -127,8 +127,8 @@ a{text-decoration:none;color:inherit}button{font:inherit;border:none;outline:non
         <div class="subtitle">Estudiante de Ingeniería de Sistemas</div>
         <p>Este es mi portafolio académico donde presento actividades, evidencias y aprendizajes de cada semana. ¡Explora y juega para reforzar lo aprendido!</p>
         <div class="hero-btns">
-          <a class="btn btn-primary" href="curso.html">▶ Ver mi curso</a>
-          <a class="btn btn-outline" href="contacto.html">✉ Contacto</a>
+          <a class="btn btn-primary" href="#curso">▶ Ver mi curso</a>
+          <a class="btn btn-outline" href="#contacto">✉ Contacto</a>
           <button class="btn btn-outline" onclick="openGame()">🎮 Jugar ahora</button>
         </div>
       </div>
@@ -148,7 +148,7 @@ a{text-decoration:none;color:inherit}button{font:inherit;border:none;outline:non
   </div>
   <div class="dash-grid">
     <div class="panel">
-      <div class="panel-head"><h3>📋 Actividades Recientes</h3><a class="link" href="curso.html">Ver todas →</a></div>
+      <div class="panel-head"><h3>📋 Actividades Recientes</h3><a class="link" href="#curso">Ver todas →</a></div>
       <div class="act-item"><div><div class="title">SQL QUEST · Esquemas e Indexación</div><div class="week">Semana 08 · Unidad 2</div></div><span class="status">Completada</span></div>
       <div class="act-item"><div><div class="title">Organización de Esquemas Lógicos</div><div class="week">Semana 07 · Unidad 2</div></div><span class="status">Completada</span></div>
       <div class="act-item"><div><div class="title">Arquitectura Física de Almacenamiento</div><div class="week">Semana 06 · Unidad 2</div></div><span class="status">Completada</span></div>
@@ -169,6 +169,30 @@ a{text-decoration:none;color:inherit}button{font:inherit;border:none;outline:non
       <button class="btn btn-outline" onclick="startQuiz('mem')">🃏 Memoria de Conceptos</button>
     </div>
   </div>
+<section id="curso" style="margin-top:28px">
+  <div class="panel"><div class="panel-head"><h3>▣ Mi Curso</h3></div>
+  <p style="color:var(--muted);font-size:13.5px;margin-bottom:10px">4 Unidades · 16 Semanas · Actividades con evidencias en la carpeta actividades/.</p>
+  <p style="color:var(--muted);font-size:13px">Unidad 1: 75% · Unidad 2: 100% · Unidad 3: 0% · Unidad 4: 0%</p>
+  </div>
+</section>
+<section id="proyectos" style="margin-top:14px">
+  <div class="panel"><div class="panel-head"><h3>▱ Proyectos / Actividades destacadas</h3></div>
+  <div class="act-item"><div><div class="title">SQL QUEST · Esquemas e Indexación</div><div class="week">Semana 08</div></div><span class="status">Completada</span></div>
+  <div class="act-item"><div><div class="title">Manual Azure SQL · Grados y Títulos</div><div class="week">Semana 05</div></div><span class="status">Completada</span></div>
+  <div class="act-item"><div><div class="title">Arquitectura Física de Almacenamiento</div><div class="week">Semana 06</div></div><span class="status">Completada</span></div>
+  </div>
+</section>
+<section id="habilidades" style="margin-top:14px">
+  <div class="panel"><div class="panel-head"><h3>◈ Habilidades</h3></div>
+  <p style="color:var(--muted);font-size:13.5px">SQL · Azure SQL · Modelado de datos · HTML/CSS · Documentación · Photoshop / Canva</p>
+  </div>
+</section>
+<section id="contacto" style="margin-top:14px;margin-bottom:40px">
+  <div class="panel"><div class="panel-head"><h3>✉ Contacto</h3></div>
+  <p style="color:var(--muted);font-size:13.5px;margin-bottom:8px">WhatsApp: <a href="https://wa.me/51929516873" style="color:var(--cyan)" target="_blank">+51 929 516 873</a></p>
+  <p style="color:var(--muted);font-size:13.5px">Facebook: davidmartinez paredes</p>
+  </div>
+</section>
 </main>
 </div>
 <div class="modal-bg" id="gameModal"><div class="modal"><div style="display:flex;justify-content:space-between;align-items:center"><h2 id="gameTitle">Mini-Juego</h2><button onclick="closeGame()" style="font-size:22px;color:var(--muted)">×</button></div><div id="gameBody"></div></div></div>
