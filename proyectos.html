@@ -1,120 +1,56 @@
 <!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="build" content="2026-11-11-academic-mp-v2">
 <title>Proyectos · David Martínez</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050c1c;--panel:rgba(12,22,45,.78);--line:rgba(34,220,255,.18);--cyan:#22dcff;--purple:#a855f7;--pink:#ec4899;--muted:#8b9cb3;--text:#e8f0ff;--glow:0 0 24px rgba(34,220,255,.25)}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(34,220,255,.12),transparent),radial-gradient(ellipse 60% 40% at 80% 10%,rgba(168,85,247,.1),transparent);line-height:1.55}
-a{color:inherit;text-decoration:none}
-.sidebar{position:fixed;top:0;left:0;bottom:0;width:250px;background:rgba(5,12,28,.94);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:16px;z-index:50}
+:root{--bg:#050b1a;--panel:rgba(10,22,45,.72);--text:#f0f7ff;--muted:#8ba3c7;--cyan:#22dcff;--purple:#a855f7;--line:rgba(34,220,255,.18)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(168,85,247,.15),transparent),radial-gradient(ellipse 60% 40% at 90% 10%,rgba(34,220,255,.1),transparent)}
+a{text-decoration:none;color:inherit}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:260px;background:rgba(5,12,28,.92);backdrop-filter:blur(20px);border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;gap:14px;z-index:50;overflow-y:auto}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
-.brand-icon{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center;font-size:16px;box-shadow:0 0 18px rgba(34,220,255,.35)}
-.profile{text-align:center;padding:6px 0}
-.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,var(--cyan),var(--purple),var(--pink)) border-box;overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-.profile h3{font-size:15px;font-weight:700}.profile small{color:var(--muted);font-size:12px}
+.brand-icon{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--purple));display:grid;place-items:center}
+.profile{text-align:center}.avatar{width:72px;height:72px;border-radius:50%;margin:0 auto 8px;border:3px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,linear-gradient(135deg,var(--cyan),var(--purple)) border-box;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}.profile h3{font-size:15px}.profile small{color:var(--muted);font-size:12px}
 .badge{display:inline-flex;margin-top:6px;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:600;background:rgba(34,220,255,.12);color:var(--cyan);border:1px solid rgba(34,220,255,.25)}
 .side-nav{display:flex;flex-direction:column;gap:3px;margin-top:8px}
-.side-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:11px;color:var(--muted);font-size:13.5px;font-weight:500;transition:.2s}
+.side-nav a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;color:var(--muted);font-size:13.5px;font-weight:500}
 .side-nav a:hover,.side-nav a.active{background:linear-gradient(90deg,rgba(34,220,255,.15),rgba(168,85,247,.1));color:#fff}
 .side-nav a.active{color:var(--cyan)}.nav-icon{width:20px;text-align:center}
-.main{margin-left:250px;padding:28px 30px 50px;width:calc(100% - 250px)}
-.page-title{font-size:26px;font-weight:800;margin-bottom:6px}
-.page-title span{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.lead{color:var(--muted);font-size:15px;margin-bottom:24px}
-.projects{display:grid;gap:16px}
-.project{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:.25s;display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
-.project:hover{border-color:rgba(34,220,255,.4);box-shadow:var(--glow)}
-.project h3{font-size:16px;font-weight:700;margin-bottom:6px}
-.project p{font-size:13.5px;color:var(--muted);margin-bottom:10px}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-size:11px;padding:3px 9px;border-radius:99px;background:rgba(34,220,255,.1);color:var(--cyan);border:1px solid rgba(34,220,255,.2)}
-.project-icon{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:26px;background:linear-gradient(135deg,rgba(34,220,255,.15),rgba(168,85,247,.15));border:1px solid rgba(34,220,255,.25)}
-.footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center}
-@media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;border-right:none;border-bottom:1px solid var(--line)}.main{margin-left:0;width:100%;padding:18px 14px 40px}.project{grid-template-columns:1fr}}
+.main{margin-left:260px;padding:28px 30px 50px;width:calc(100% - 260px);max-width:900px}
+.page-title{font-size:26px;font-weight:800;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:22px;font-size:14.5px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px}
+.panel h3{font-size:15px;color:var(--cyan);margin-bottom:8px}
+.panel p{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+.tag{display:inline-block;font-size:11px;padding:3px 9px;border-radius:99px;background:rgba(34,220,255,.1);color:var(--cyan);margin:2px 4px 2px 0;border:1px solid rgba(34,220,255,.2)}
+@media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;border-right:none;border-bottom:1px solid var(--line)}.main{margin-left:0;width:100%;padding:18px}}
 </style>
-</head>
-<body>
-<div class="sidebar">
-  <div class="brand"><div class="brand-icon">✦</div> David Martínez</div>
+</head><body>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">◈</div><div>Portafolio <span style="color:var(--cyan)">Académico</span></div></div>
   <div class="profile">
     <div class="avatar"><img src="assets/profile-david.png" alt="David" onerror="this.style.display='none'"></div>
-    <h3>David Martínez</h3>
-    <small>Diseñador Gráfico</small>
-    <div class="badge">Disponible</div>
+    <h3>David Martínez</h3><small>Ingeniería de Sistemas</small>
+    <div class="badge">⚡ Estudiante Avanzado</div>
   </div>
   <nav class="side-nav">
-    <a href="index.html"><span class="nav-icon">🏠</span> Inicio</a>
-    <a href="sobre-mi.html"><span class="nav-icon">👤</span> Sobre mí</a>
-    <a class="active" href="proyectos.html"><span class="nav-icon">🎨</span> Proyectos</a>
-    <a href="curso.html"><span class="nav-icon">📚</span> Curso</a>
-    <a href="contacto.html"><span class="nav-icon">📩</span> Contacto</a>
+    <a href="index.html"><span class="nav-icon">⌂</span> Dashboard</a>
+    <a href="curso.html"><span class="nav-icon">▣</span> Mi Curso</a>
+    <a class="active" href="proyectos.html"><span class="nav-icon">▱</span> Proyectos</a>
+    <a href="sobre-mi.html"><span class="nav-icon">◈</span> Sobre mí</a>
+    <a href="index.html"><span class="nav-icon">🎮</span> Mini Juego</a>
+    <a href="contacto.html"><span class="nav-icon">✉</span> Contacto</a>
   </nav>
-</div>
+</aside>
 <main class="main">
-  <h1 class="page-title">Mis <span>proyectos</span></h1>
-  <p class="lead">Trabajos de diseño gráfico (académicos y de práctica) donde aplico composición, color, tipografía y comunicación visual.</p>
-
-  <div class="projects">
-    <article class="project">
-      <div>
-        <h3>Identidad visual – Cafetería “Aroma Andino”</h3>
-        <p>Diseño completo de marca: logo, paleta de colores, tipografías y piezas para redes. Tonos cálidos y terrosos que transmiten cercanía y calidad artesanal. Incluye menú digital y plantillas de stories.</p>
-        <div class="tags"><span class="tag">Branding</span><span class="tag">Illustrator</span><span class="tag">Canva</span><span class="tag">Identidad</span></div>
-      </div>
-      <div class="project-icon">☕</div>
-    </article>
-
-    <article class="project">
-      <div>
-        <h3>Campaña visual – Lanzamiento de app educativa</h3>
-        <p>Serie de posts, stories, banners y portada para el lanzamiento de una app educativa dirigida a jóvenes. Jerarquía clara, estilo moderno y colores vibrantes para captar atención en redes.</p>
-        <div class="tags"><span class="tag">Social Media</span><span class="tag">Photoshop</span><span class="tag">Canva</span><span class="tag">Campaña</span></div>
-      </div>
-      <div class="project-icon">📱</div>
-    </article>
-
-    <article class="project">
-      <div>
-        <h3>Rediseño de material institucional</h3>
-        <p>Actualización de presentaciones, afiches y plantillas para una institución educativa. Se unificaron criterios de marca, se mejoró la legibilidad y se creó un sistema visual coherente.</p>
-        <div class="tags"><span class="tag">Editorial</span><span class="tag">Photoshop</span><span class="tag">Office</span><span class="tag">Institucional</span></div>
-      </div>
-      <div class="project-icon">🏫</div>
-    </article>
-
-    <article class="project">
-      <div>
-        <h3>Pack de piezas para emprendedor local</h3>
-        <p>Conjunto de diseños para un pequeño negocio: logo simplificado, tarjetas de presentación, flyer promocional y templates para Instagram. Imagen más profesional y coherente con bajo presupuesto.</p>
-        <div class="tags"><span class="tag">Branding</span><span class="tag">Illustrator</span><span class="tag">Canva</span><span class="tag">Emprendimiento</span></div>
-      </div>
-      <div class="project-icon">🛒</div>
-    </article>
-
-    <article class="project">
-      <div>
-        <h3>Kit de redes – Marca personal de coach</h3>
-        <p>Diseño de feed, highlights y plantillas reutilizables para un coach de productividad. Estilo limpio, tipografía fuerte y colores que transmiten confianza y energía.</p>
-        <div class="tags"><span class="tag">Social Media</span><span class="tag">Canva</span><span class="tag">Branding</span></div>
-      </div>
-      <div class="project-icon">💼</div>
-    </article>
-
-    <article class="project">
-      <div>
-        <h3>Afiche y material de evento cultural</h3>
-        <p>Diseño de afiche principal, tickets y piezas digitales para un evento cultural local. Uso de tipografía expresiva y contraste alto para legibilidad a distancia y en pantallas.</p>
-        <div class="tags"><span class="tag">Editorial</span><span class="tag">Illustrator</span><span class="tag">Photoshop</span><span class="tag">Evento</span></div>
-      </div>
-      <div class="project-icon">🎭</div>
-    </article>
-  </div>
-
-  <div class="footer">© 2026 David Abel Martínez Paredes · Proyectos de práctica y académicos</div>
+<h1 class="page-title">Proyectos</h1>
+<p class="lead">Trabajos del curso relacionados con datos, documentación y arquitectura.</p>
+<div class="panel"><h3>SQL QUEST · Esquemas e Indexación</h3><p>Semana 08 · Unidad 2</p><span class="tag">SQL</span><span class="tag">Completada</span></div>
+<div class="panel"><h3>Manual Azure SQL · Grados y Títulos</h3><p>Semana 05 · Unidad 2</p><span class="tag">Azure SQL</span><span class="tag">Completada</span></div>
+<div class="panel"><h3>Arquitectura Física de Almacenamiento</h3><p>Semana 06 · Unidad 2</p><span class="tag">Arquitectura</span><span class="tag">Completada</span></div>
+<div class="panel"><h3>Cadena Editorial / Empresa Informática</h3><p>Semanas 03–04 · Modelado y datos de prueba</p><span class="tag">Modelado</span><span class="tag">Completada</span></div>
 </main>
-</body>
-</html>
+</body></html>
